@@ -25,7 +25,7 @@ const ExperienceTimeline = () => {
       title: "Resident Advisor",
       year: "Apr. 2023 - Jun. 2024",
       location: "Santa Clara, CA",
-      details: "Hosted events throughout the school year, targeted at professional development, DEI, community, and fun!",
+      details: "Hosted events throughout the school year, targeted at professional development, DEI, community, and fun! \nAlso handled roommate conflicts in addition to assessing need of students in the residence hall.",
     },
     {
       title: "University Library Student Assistant",
@@ -56,11 +56,11 @@ const ExperienceTimeline = () => {
             {/* Branch Lines */}
             <div className="absolute left-[-2.5rem] flex flex-col items-center">
               <div
-                className={`w-4 h-4 rounded-full bg-blue-500 mb-4 ${
-                  index % 2 === 0 ? "ml-6" : "-ml-6"
+                className={`w-4 h-4 rounded-full bg-blue-500 mb-1 ${
+                  index % 2 === 0 ? "ml-7" : "-ml-6"
                 }`}
               />
-              {index < experiences.length - 1 && (
+              {index < experiences.length && (
                 <div
                   className={`h-20 ${
                     index % 2 === 0 ? "ml-6" : "-ml-6"
