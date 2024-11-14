@@ -31,10 +31,12 @@ const AboutMe = () => {
             </div>
             {/* Contact & Social Media */}
             <div className="mt-8 flex flex-row items-center justify-between">
-              <Button>
-                {" "}
-                <p className="text-sm">Contact Me</p>
-              </Button>
+              <a href="mailto:raphaelkusuma5@gmail.com">
+                <Button>
+                  {" "}
+                  <p className="text-sm">Contact Me</p>
+                </Button>
+              </a>
               <div className="space-x-4">
                 <SocialIcon url="https://github.com/RaphaLK" />
                 <SocialIcon url="https://www.linkedin.com/in/raphaelkusuma/" />
@@ -56,21 +58,35 @@ const AboutMe = () => {
       <div className="grid grid-cols-2 mt-8 w-screen">
         <div className="flex flex-col justify-start ml-2">
           <p className="text-4xl font-semibold">Team Player</p>
-          <p className="text-sm font-light text-gray-500"> RA, Ultimate Frisbee Player, Recreational Pickleball player, and retired Hackathon Participant</p>
-          <Carousel2/>
+          <p className="text-sm font-light text-gray-500">
+            {" "}
+            RA, Ultimate Frisbee Player, Recreational Pickleball player, and
+            retired Hackathon Participant
+          </p>
+          <Carousel2 />
         </div>
         <div className="flex flex-col justify-center">
           <p className="text-4xl font-light">Photography</p>
-          <p className="text-sm font-light text-gray-500"> As an RA, I was an avid photographer for a while. I captured professional headshots and nature.</p>
-          <Carousel1/>
+          <p className="text-sm font-light text-gray-500">
+            {" "}
+            As an RA, I was an avid photographer for a while. I captured
+            professional headshots and nature.
+          </p>
+          <Carousel1 />
         </div>
         <div className="flex flex-col justify-start items-center">
           <p className="text-4xl font-light">Full Stack Developer</p>
-          <p className="text-sm font-light text-gray-500"> Lots of React and React-Native Experience.</p>
+          <p className="text-sm font-light text-gray-500">
+            {" "}
+            Lots of React and React-Native Experience.
+          </p>
         </div>
         <div className="flex flex-col justify-end items-center">
           <p className="text-4xl font-semibold">Competitive Programmer</p>
-          <p className="text-sm font-light text-gray-500"> Attended ICPC, representing Santa Clara University in the D2 rank.</p>
+          <p className="text-sm font-light text-gray-500">
+            {" "}
+            Attended ICPC, representing Santa Clara University in the D2 rank.
+          </p>
         </div>
       </div>
     </div>
