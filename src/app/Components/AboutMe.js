@@ -3,6 +3,7 @@ import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { SocialIcon } from "react-social-icons";
+import Carousel1 from "./Carousel1";
 const AboutMe = () => {
   return (
     <div className="grid grid-rows-3 mt-6">
@@ -40,10 +41,10 @@ const AboutMe = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-end max-h-72">
           <Image
             src="/Assets/MyPhoto.jpg"
-            width={220}
+            width={275}
             height={200}
             className="rounded-xl shadow-2xl"
             alt={"My Headshot"}
@@ -52,16 +53,17 @@ const AboutMe = () => {
       </div>
       {/* Second Half */}
       <div className="grid grid-cols-2 mt-8 w-screen">
-        <div className="flex flex-row items-start ml-2">
+        <div className="flex flex-col justify-start ml-2">
           <p className="text-4xl font-semibold">Software Engineer</p>
         </div>
-        <div className="flex flex-row items-center">
+        <div className="flex flex-col justify-center">
           <p className="text-4xl font-light">Photography</p>
+          <Carousel1/>
         </div>
-        <div className="flex flex-row items-start justify-center">
+        <div className="flex flex-col justify-start items-center">
           <p className="text-4xl font-light">Full Stack Developer</p>
         </div>
-        <div className="flex flex-row items-end justify-center">
+        <div className="flex flex-col justify-end items-center">
           <p className="text-4xl font-semibold">Competitive Programmer</p>
         </div>
       </div>
