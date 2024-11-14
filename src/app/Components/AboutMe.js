@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { SocialIcon } from "react-social-icons";
 const AboutMe = () => {
   return (
-    <div className="grid grid-rows-3 mt-6 ">
-      <div className="grid grid-cols-2 ">
+    <div className="grid grid-rows-3 mt-6">
+      <div className="grid grid-cols-2 mx-auto">
         <div className="">
           <div className="grid grid-rows-2">
             <p className="text-2xl">Hello, I&apos;m Raphael</p>
@@ -50,7 +50,21 @@ const AboutMe = () => {
           />
         </div>
       </div>
-      <div></div>
+      {/* Second Half */}
+      <div className="grid grid-cols-2 mt-8 w-screen">
+        <div className="flex flex-row items-start ml-2">
+          <p className="text-4xl font-semibold">Software Engineer</p>
+        </div>
+        <div className="flex flex-row items-center">
+          <p className="text-4xl font-light">Photography</p>
+        </div>
+        <div className="flex flex-row items-start justify-center">
+          <p className="text-4xl font-light">Full Stack Developer</p>
+        </div>
+        <div className="flex flex-row items-end justify-center">
+          <p className="text-4xl font-semibold">Competitive Programmer</p>
+        </div>
+      </div>
     </div>
   );
 };
