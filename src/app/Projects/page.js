@@ -25,7 +25,7 @@ export default function Projects() {
           ProjectInfo={
             "Web App to enable students to create their Academic four year plan. Acted as the scrum master during weekly meetings, identifying tasks and assessing priority. I was also one of the main developers in this project, created some of the main component such as the course requirements and the 'Drag & Drop' cards. Spearheaded design choices, integrated Firebase authentication and Cloud storage to our WebApp. Ensured that the database schema did not have redundancies."
           }
-          ProjectImage={"/Assets/PublicTransitHub.png"}
+          ProjectImage={"/Assets/SCU_Course.png"}
         />
         <ProjectCard
           ProjectTitle={"Vocal EMG Identifier"}
@@ -35,7 +35,7 @@ export default function Projects() {
           ProjectInfo={
             "A fun little side project related to my Capstone project! Visualized EMG Data from research papers to identify potential experiment procedures. Trained and tested an ML Model using KNNs to identify whether an individual is speaking based on Facial EMG Signals with an Accuracy of 92.5%."
           }
-          ProjectImage={"/Assets/PublicTransitHub.png"}
+          ProjectImage={"/Assets/emg_signals.png"}
         />
         <ProjectCard
           ProjectTitle={"License Quest"}
@@ -45,7 +45,7 @@ export default function Projects() {
           ProjectInfo={
             "Mobile app created to assist new/student drivers with acclimating to driving. Used Inrix APIs to handle navigation and routing to less crowded areas. Mostly responsible for the Front-End, but also created Web Scrapers and Excel Parsers using JavaScript. "
           }
-          ProjectImage={"/Assets/PublicTransitHub.png"}
+          ProjectImage={"/Assets/LicenseQuest.jpg"}
         />
         <ProjectCard
           ProjectTitle={"Bottom Tab Navigator"}
@@ -53,7 +53,7 @@ export default function Projects() {
           ProjectInfo={
             "An experimental component. Was meant to test the viability of a Bottom Tab Navigator and a 'Pull-Up' Sheet for Public Transport Hub. This was something I made when I first hopped onto the Public Transit Hub project, and I was tasked with UI updates! One of the first things I made with React Native, and this set me up for my other projects."
           }
-          ProjectImage={"/Assets/PublicTransitHub.png"}
+          ProjectImage={"/Assets/React_Navigation.png"}
         />
         <ProjectCard
           ProjectTitle={"Allescan"}
@@ -61,7 +61,7 @@ export default function Projects() {
           ProjectInfo={
             "Allescan was my first Hackathon Project. I worked on the Front End and Firebase Integration. We utilized the Google Vision API to identify nutrient labels and identify and user allergens. This was an incredible learning experience and was my first introduction to Mobile App Development."
           }
-          ProjectImage={"/Assets/PublicTransitHub.png"}
+          ProjectImage={"/Assets/Allescan.jpg"}
         />
       </div>
     </div>
