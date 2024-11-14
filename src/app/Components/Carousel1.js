@@ -12,7 +12,7 @@ import React from "react";
 // Photography
 const Carousel1 = () => {
   return (
-    <Carousel className="w-full max-w-64 flex mt-6 max-h-48">
+    <Carousel className="w-full max-w-64 flex mt-4 max-h-48">
       <CarouselContent className="rounded-md">
         <CarouselItem>
           <Card>
