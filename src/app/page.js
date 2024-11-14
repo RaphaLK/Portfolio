@@ -1,10 +1,11 @@
-import Image from "next/image";
 import Navbar from "./Components/Navbar";
+import AboutMe from "./Components/AboutMe";
 
 export default function Home() {
   return (
-    <div className="flex w-full justify-center font-[family-name:var(--font-geist-sans)]">
+    <div className="flex flex-col w-full items-center font-[family-name:var(--font-geist-sans)]">
       <Navbar/>
+      <AboutMe/>
     </div>
   );
 }
