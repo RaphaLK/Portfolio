@@ -85,7 +85,7 @@ const AboutMe = () => {
           <p className="text-4xl font-semibold">Competitive Programmer</p>
           <p className="text-sm font-light text-gray-500">
             {" "}
-            Attended ICPC, representing Santa Clara University in the D2 rank.
+            Attended ICPC, representing Santa Clara University and was #7 in the Pacific Northwest in D2.
           </p>
         </div>
       </div>
