@@ -7,13 +7,39 @@ export default function Projects() {
     <div className="flex flex-col items-center font-[family-name:var(--font-geist-sans)]">
       <Navbar />
       <div className="grid grid-cols-3 grid-rows-2 ">
+      <ProjectCard
+          ProjectTitle={"Music Genre Classifier"}
+          ProjectDescription={
+            "Python, Librosa, Sci-Kit Learn, XGBoost, Pandas, Numpy"
+          }
+          ProjectInfo={
+            "Developed a music genre classifier. Built the pre-processor and feature extraction pipeline to handle 30 second audio clips. Achieved an 84.5% accuracy with XGBoost, also tested out a Random Forest Classifier and achieved an accuracy of 82.5%."
+          }
+          ProjectImage={"/Assets/emg_signals.png"}
+        />
+        <ProjectCard
+          ProjectTitle={"React Native Flippable Card"}
+          ProjectDescription={"React-Native, JavaScript"}
+          ProjectInfo={
+            "Created an open-source package to replace a deprecated React-Native package for proper dependency management. Removed old dependencies from the previous package and updated it to suit my need more and ported it over to modern React component standards."
+          }
+          ProjectImage={"/Assets/React_Navigation.png"}
+        />
+        <ProjectCard
+          ProjectTitle={"Vocal sEMG Translations"}
+          ProjectDescription={"Python, Librosa, Sci-kit Learn, Pandas, Numpy"}
+          ProjectInfo={
+            "Developed a multilabel classifier which takes in windowed data from 4 sEMG channels. Utilized a novel approach of classifying phonetic symbols to build up speech. Created data pipelines for pre-processing and labelling. Currently at a 20% accuracy, working to improve the model through data acquistion and data pre-processing research."
+          }
+          ProjectImage={"/Assets/emg_signals.png"}
+        />
         <ProjectCard
           ProjectTitle={"Public Transit Hub"}
           ProjectDescription={
             "React Native, Expo, JavaScript, Python, Flask, MySQL, cPanel, Firebase"
           }
           ProjectInfo={
-            "Full Stack Mobile and Web Application. Main goal of assessing demand of public transportation at SCU. I currently act as the team lead for the Mobile App team, in addition to one of the core maintainers for the Backend."
+            "Full Stack Mobile and Web Application. Main goal of assessing demand of public transportation at SCU. I currently act as the team lead for the Mobile App team, in addition to one of the core maintainers for the Backend repo. I handle Mobile App development, Backend Development, and DevOps. Created new designs and developed multiple features in the mobile app. Developed Web Scrapers, Rest APIs, and Database Automation Scripts."
           }
           ProjectImage={"/Assets/PublicTransitHub.png"}
         />
@@ -28,7 +54,7 @@ export default function Projects() {
           ProjectImage={"/Assets/SCU_Course.png"}
         />
         <ProjectCard
-          ProjectTitle={"Vocal EMG Identifier"}
+          ProjectTitle={"Vocal sEMG Identifier"}
           ProjectDescription={
             "Python, Jupyter Notebook, Seaborn, Pandas, Pytorch"
           }
