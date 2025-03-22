@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { SocialIcon } from "react-social-icons";
 import Carousel1 from "./Carousel1";
 import Carousel2 from "./Carousel2";
+import Carousel3 from "./Carousel3";
 const AboutMe = () => {
   return (
     <div className="grid grid-rows-3 mt-6">
@@ -56,7 +57,7 @@ const AboutMe = () => {
       </div>
       {/* Second Half */}
       <div className="grid grid-cols-2 mt-8 w-screen">
-        <div className="flex flex-col justify-start ml-2">
+        <div className="flex flex-col justify-start ml-6">
           <p className="text-4xl font-semibold">Team Player</p>
           <p className="text-sm font-light text-gray-500">
             {" "}
@@ -87,6 +88,7 @@ const AboutMe = () => {
             {" "}
             Attended ICPC, representing Santa Clara University and was #7 in the Pacific Northwest in D2.
           </p>
+          <Carousel3/>
         </div>
       </div>
     </div>
