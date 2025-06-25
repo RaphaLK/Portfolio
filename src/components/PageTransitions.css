@@ -1,41 +1,66 @@
 @import "tailwindcss";
 
-/* Slide Right */
+/* Container styling for transitions */
+.transition-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 60px; /* Space for navbar */
+  overflow-x: hidden;
+  overflow-y: visible; /* Allow vertical scrolling */
+}
+
+.page-content {
+  position: relative; /* Change from absolute to relative */
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  left: 0;
+  right: 0;
+  will-change: transform;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Slide Right - for going from lower index to higher index page */
 .slide-right-enter {
-  transform: translateX(100%);
+  transform: translateX(-100%);
   opacity: 0;
 }
 .slide-right-enter-active {
   transform: translateX(0);
   opacity: 1;
-  transition: transform 300ms ease, opacity 300ms ease;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease;
 }
 .slide-right-exit {
   transform: translateX(0);
   opacity: 1;
 }
 .slide-right-exit-active {
-  transform: translateX(-100%);
+  transform: translateX(100%);
   opacity: 0;
-  transition: transform 300ms ease, opacity 300ms ease;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease;
 }
 
-/* Slide Left */
+/* Slide Left - for going from higher index to lower index page */
 .slide-left-enter {
-  transform: translateX(-100%);
+  transform: translateX(100%);
   opacity: 0;
 }
 .slide-left-enter-active {
   transform: translateX(0);
   opacity: 1;
-  transition: transform 300ms ease, opacity 300ms ease;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease;
 }
 .slide-left-exit {
   transform: translateX(0);
   opacity: 1;
 }
 .slide-left-exit-active {
-  transform: translateX(100%);
+  transform: translateX(-100%);
   opacity: 0;
-  transition: transform 300ms ease, opacity 300ms ease;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease;
+}
+
+/* Hide navbar container as we're handling navbar in layout */
+.navbar-container {
+  display: none; /* Hide this container as we're handling navbar in layout */
 }

@@ -3,11 +3,21 @@ import React from "react";
 const ExperienceTimeline = () => {
   const experiences = [
     {
+      title: "HCI Lab - Full Stack Developer (SMAR)",
+      year: "April 2025 - Present",
+      location: "Santa Clara, CA",
+      details: [
+        "Contributed and maintained a React Webapp that allows non-technical researchers to systematically scrape and analyze information of mobile applications on the Google Play Store and the App Store",
+        "Updated dependencies to ensure project is kept up-to-date.",
+        "Implemented automated email reminders, and integrated this functionality with BullMQ scheduled requests."
+      ],
+    },
+    {
       title: "EPIC Lab - Mobile App Development Team Lead (Public Transit Hub)",
       year: "May 2023 - Present",
       location: "Santa Clara, CA",
       details: [
-        "Acted as the team lead for the Mobile App Dev. Team.",
+        "Acted as the lead for the mobile development team, spearheading development for an experimental method for encouraging public transportation.",
         "Handled task division, coordinated progress with the Web, QA, and Backend Team.",
         "Worked under Dr. Navid Shaghaghi in SCU's EPIC Lab alongside fellow undergraduate and graduate students.",
         "Created Web Scrapers, Hosted API Endpoints on cPanel and created database automation scripts to fill our MySQL database.",
@@ -22,8 +32,8 @@ const ExperienceTimeline = () => {
         "Worked alongside the Signal Generator Backend team.",
         "Fixed bugs, created test builds, worked on internal tools, and attended Scrum meetings.",
         "Created unit tests, began development on a Linux Kernel Driver to enable communication between a signal generator and a power meter through GPIB (IEEE-488).",
-        "Translated 68k Motorola Assembly to C and identified needed changes through analysis of the system's memory map.",
-        "Spoke with Senior and Junior engineers to ramp up quickly and to learn key technologies in the industry.",
+        "Contributed to backend development for the latest model of Signal Generators using C++ and the Qt Framework, and implemented new functionalities, such as SCPI commands and NTFS support.",
+        "Developed a C++/Qt GUI for a prototype VSG to interface with its backend build to manage calibration sequences.",
       ],
     },
     {
@@ -34,7 +44,7 @@ const ExperienceTimeline = () => {
         "Taught Python basics to middle and high school girls to promote women in STEM.",
         "Motivated students and encouraged engagement during Saturday morning sessions.",
         "Inspired students to expand on their projects and answered clarifying questions.",
-        "Planned fun game during break time!"
+        "Planned fun ice-breaker games during break time!"
       ],
     },
     {
@@ -42,9 +52,9 @@ const ExperienceTimeline = () => {
       year: "Apr. 2023 - Jun. 2024",
       location: "Santa Clara, CA",
       details: [
-        "Hosted events throughout the school year focused on professional development, DEI, community, and fun.",
+        "Hosted 12-15 events throughout the school year focused on professional development, DEI, community, and fun.",
         "Handled roommate conflicts and assessed the needs of students in the residence hall.",
-        "Brought up concerns and ideas to improve the residential hall."
+        "Brought up concerns and ideas to improve the residence hall, such as a pool table in the multi-purpose room, and requesting more trash bags."
       ],
     },
     {
@@ -52,9 +62,9 @@ const ExperienceTimeline = () => {
       year: "Apr. 2022 - Present",
       location: "Santa Clara, CA",
       details: [
-        "Audited archival materials.",
-        "Reshelved books and maintained proper organization.",
-        "Provided excellent customer service to library patrons.",
+        "Audited archival materials, moved current materials into the archive.",
+        "Reshelved books and maintained proper organization within the library's offerings.",
+        "Provided proper customer service to library patrons, helping them find what they need.",
       ],
     },
     {
@@ -71,8 +81,8 @@ const ExperienceTimeline = () => {
       year: "2020-2021",
       location: "Jakarta, Indonesia",
       details: [
-        "Led a team of 6 to handle logistics for a city-wide high school competition.",
-        "Managed budget handling and materials requests.",
+        "Led a team of 6 to handle logistics for a city-wide highschool event.",
+        "Managed budget handling, staff meals, and event materials requests.",
         "Facilitated communication between different team leads to ensure smooth event execution.",
       ],
     },

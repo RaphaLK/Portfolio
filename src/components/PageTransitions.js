@@ -8,7 +8,9 @@ import './PageTransitions.css';
 // Route index mapping to determine animation direction
 const routeIndex = {
   '/': 0,
+  '/projects': 1,
   '/Projects': 1,
+  '/work': 2,
   '/Work': 2
 };
 
@@ -17,10 +19,9 @@ export default function PageTransition({ children }) {
   const nodeRef = useRef(null);
   const [prevPathname, setPrevPathname] = useState(pathname);
   const [transitionClass, setTransitionClass] = useState('slide-right');
-
+  
   useEffect(() => {
     if (pathname !== prevPathname) {
-      // Determine direction based on route indices
       const currentIndex = routeIndex[pathname] ?? 0;
       const prevIndex = routeIndex[prevPathname] ?? 0;
       
@@ -31,18 +32,20 @@ export default function PageTransition({ children }) {
   }, [pathname, prevPathname]);
 
   return (
-    <TransitionGroup component={null}>
-      <CSSTransition
-        key={pathname}
-        classNames={transitionClass}
-        timeout={300}
-        nodeRef={nodeRef}
-        unmountOnExit
-      >
-        <div ref={nodeRef}>
-          {children}
-        </div>
-      </CSSTransition>
-    </TransitionGroup>
+    <div className="transition-container">
+      <TransitionGroup component={null}>
+        <CSSTransition
+          key={pathname}
+          classNames={transitionClass}
+          timeout={500}
+          nodeRef={nodeRef}
+          unmountOnExit
+        >
+          <div ref={nodeRef} className="page-content">
+            {children}
+          </div>
+        </CSSTransition>
+      </TransitionGroup>
+    </div>
   );
 }
