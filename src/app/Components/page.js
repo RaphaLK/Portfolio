@@ -132,10 +132,10 @@ export default function AboutMe() {
               Current Focus: Systems Development
             </h2>
             <p className="text-slate-300 mb-5 leading-relaxed">
-              I'm currently developing a microkernel operating system in Rust,
+              I&apos;m currently developing a microkernel operating system in Rust,
               focusing on memory safety and high performance based on Philip
-              Opperman's blog. I'm also strengthening my C++ expertise through advanced 
-              system programming, studying Scott Meyer's Effective Modern C++, and implementing
+              Opperman&apos;s blog. I&apos;m also strengthening my C++ expertise through advanced 
+              system programming, studying Scott Meyer&apos;s Effective Modern C++, and implementing
               low-level network interfaces with tools like CMake, gdb, and Qt.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -203,8 +203,8 @@ export default function AboutMe() {
             </h3>
             <p className="text-gray-600 mb-5">
               Experienced Resident Assistant, University Library Student
-              Assistant. Got an award for "Most Caring" and "Most likely to know
-              a resident's name" :)
+              Assistant. Got an award for &quot;Most Caring&quot; and &quot;Most likely to know
+              a resident&quot;s name&quot; :)
             </p>
             <div className="h-48 overflow-hidden rounded-lg">
               <div className="rounded-lg">
@@ -224,7 +224,7 @@ export default function AboutMe() {
               Photography
             </h3>
             <p className="text-gray-600 mb-5">
-              As an RA, I had access to the residence hall's camera. I took professional headshots and macroshots of nature.
+              As an RA, I had access to the residence hall&apos;s camera. I took professional headshots and macroshots of nature.
             </p>
             <div className="h-48 flex overflow-hidden rounded-lg justify-center">
               <div className="rounded-lg">
