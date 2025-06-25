@@ -13,7 +13,6 @@
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/postcss": "^4.1.10",
-    "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
@@ -24,12 +23,13 @@
     "react-social-icons": "^6.24.0",
     "react-transition-group": "^4.4.5",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.10",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
-    "postcss": "^8"
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.10"
   }
 }

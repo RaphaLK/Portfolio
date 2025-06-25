@@ -1,43 +1,49 @@
+"use client";
 import React from "react";
+import Link from "next/link";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
+  NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import Link from "next/link";
+
 const Navbar = () => {
   return (
-    <div>
-      <NavigationMenu className="grid grid-cols-3 w-full p-3">
-        <div className="transition-all duration-400 ease-in-out text-lg hover:scale-110">
-          <NavigationMenuItem className="flex mx-5 p-2 items-center justify-center border-b border-gray-300 hover:animate-pulse">
-            <Link href="/" passHref>
-              <NavigationMenuLink>
-                About Me
-              </NavigationMenuLink>
+    <NavigationMenu className="w-full p-3">
+      <NavigationMenuList className="grid grid-cols-3 w-full">
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild>
+            <Link
+              href="/"
+              className="transition-all duration-400 ease-in-out text-lg hover:scale-110 mx-5 p-2 border-b border-gray-300 hover:animate-pulse flex justify-center items-center"
+            >
+              About Me
             </Link>
-          </NavigationMenuItem>
-        </div>
-        <div className="transition-all duration-400 ease-in-out text-lg hover:scale-110">
-          <NavigationMenuItem className="flex mx-5 p-2 items-center justify-center border-b border-gray-300 hover:animate-pulse">
-            <Link href="/Projects" passHref>
-              <NavigationMenuLink>
-                Projects
-              </NavigationMenuLink>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild>
+            <Link
+              href="/Projects"
+              className="transition-all duration-400 ease-in-out text-lg hover:scale-110 mx-5 p-2 border-b border-gray-300 hover:animate-pulse flex justify-center items-center"
+            >
+              Projects
             </Link>
-          </NavigationMenuItem>
-        </div>
-        <div className="transition-all duration-400 ease-in-out text-lg hover:scale-110">
-          <NavigationMenuItem className="flex mx-5 p-2 items-center justify-center border-b border-gray-300 hover:animate-pulse">
-            <Link href="/Work" passHref>
-              <NavigationMenuLink>
-                Experience
-              </NavigationMenuLink>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild>
+            <Link
+              href="/Work"
+              className="transition-all duration-400 ease-in-out text-lg hover:scale-110 mx-5 p-2 border-b border-gray-300 hover:animate-pulse flex justify-center items-center"
+            >
+              Experience
             </Link>
-          </NavigationMenuItem>
-        </div>
-      </NavigationMenu>
-    </div>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 };
 
