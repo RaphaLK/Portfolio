@@ -82,3 +82,19 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
+
+/* Ensure smooth scrolling for transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fix for Next.js transitions */
+#__next {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Prevent CLS during transitions */
+.transition-group {
+  position: relative;
+}

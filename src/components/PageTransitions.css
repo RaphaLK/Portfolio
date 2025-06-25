@@ -11,56 +11,87 @@
 }
 
 .page-content {
-  position: relative; /* Change from absolute to relative */
+  position: relative; /* Using relative position for better content flow */
   width: 100%;
   min-height: calc(100vh - 60px);
-  left: 0;
-  right: 0;
   will-change: transform;
   -webkit-font-smoothing: subpixel-antialiased;
+  visibility: visible;
+  opacity: 1;
 }
 
-/* Slide Right - for going from lower index to higher index page */
-.slide-right-enter {
-  transform: translateX(-100%);
-  opacity: 0;
+.transition-active {
+  /* This class is applied during transitions */
+  visibility: hidden;
 }
+
+/* Slide Right */
+.slide-right-enter {
+  transform: translateX(100%);
+  position: absolute; /* Absolute during animation */
+  width: 100%;
+  top: 60px;
+  visibility: hidden;
+}
+
 .slide-right-enter-active {
   transform: translateX(0);
-  opacity: 1;
-  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease;
-}
-.slide-right-exit {
-  transform: translateX(0);
-  opacity: 1;
-}
-.slide-right-exit-active {
-  transform: translateX(100%);
-  opacity: 0;
-  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  visibility: visible;
+  transition-delay: 0ms, 400ms;
+  transition-property: transform, visibility;
 }
 
-/* Slide Left - for going from higher index to lower index page */
-.slide-left-enter {
-  transform: translateX(100%);
-  opacity: 0;
+.slide-right-exit {
+  transform: translateX(0);
+  position: absolute; /* Absolute during animation */
+  width: 100%;
+  top: 60px;
+  visibility: visible;
 }
+
+.slide-right-exit-active {
+  transform: translateX(-100%);
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  visibility: hidden;
+  transition-delay: 0ms, 100ms;
+  transition-property: transform, visibility;
+}
+
+/* Slide Left */
+.slide-left-enter {
+  transform: translateX(-100%);
+  position: absolute; /* Absolute during animation */
+  width: 100%;
+  top: 60px;
+  visibility: hidden;
+}
+
 .slide-left-enter-active {
   transform: translateX(0);
-  opacity: 1;
-  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  visibility: visible;
+  transition-delay: 0ms, 400ms;
+  transition-property: transform, visibility;
 }
+
 .slide-left-exit {
   transform: translateX(0);
-  opacity: 1;
+  position: absolute; /* Absolute during animation */
+  width: 100%;
+  top: 60px;
+  visibility: visible;
 }
+
 .slide-left-exit-active {
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease;
+  transform: translateX(100%);
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  visibility: hidden;
+  transition-delay: 0ms, 100ms;
+  transition-property: transform, visibility;
 }
 
 /* Hide navbar container as we're handling navbar in layout */
 .navbar-container {
-  display: none; /* Hide this container as we're handling navbar in layout */
+  display: none;
 }
