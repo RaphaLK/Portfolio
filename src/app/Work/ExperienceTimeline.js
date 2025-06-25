@@ -13,7 +13,7 @@ const ExperienceTimeline = () => {
       ],
     },
     {
-      title: "EPIC Lab - Mobile App Development Team Lead (Public Transit Hub)",
+      title: "EPIC Lab - Mobile Team Lead (PTHub)",
       year: "May 2023 - Present",
       location: "Santa Clara, CA",
       details: [
@@ -68,7 +68,7 @@ const ExperienceTimeline = () => {
       ],
     },
     {
-      title: "Streaming Operator",
+      title: "Musical Streaming Operator",
       year: "2021-2021",
       location: "Jakarta, Indonesia",
       details: [
@@ -77,7 +77,7 @@ const ExperienceTimeline = () => {
       ],
     },
     {
-      title: "Head of Logistics",
+      title: "Springfield Cup Head of Logistics",
       year: "2020-2021",
       location: "Jakarta, Indonesia",
       details: [
@@ -89,42 +89,93 @@ const ExperienceTimeline = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center mt-10">
+    <div className="flex flex-col items-center mt-10 w-full max-w-5xl px-4">
+      <h2 className="text-2xl font-bold mb-6 text-left w-full border-b pb-2">Work Experience Source Tree</h2>
+      
       {/* Timeline container */}
-      <div className="relative border-l-2 border-gray-300 pl-8">
-        {experiences.map((exp, index) => (
-          <div key={index} className="mb-12 flex items-start">
-            {/* Branch Lines -- The left design thingy*/}
-            <div className="absolute left-[-2.5rem] flex flex-col items-center">
-              <div
-                className={`w-4 h-4 rounded-full bg-blue-500 mb-1 ${
-                  index % 2 === 0 ? "ml-7" : "-ml-6"
-                }`}
-              />
-              {index < experiences.length && (
-                <div
-                  className={`h-20 ${
-                    index % 2 === 0 ? "ml-6" : "-ml-6"
-                  } border-l-2 border-gray-300`}
-                />
-              )}
-            </div>
-
-            {/* Content */}
-            <div className="ml-4">
-              <p className="font-semibold text-lg">{exp.title}</p>
-              <div className="flex flex-row">
-                <p className="text-sm text-gray-500">{exp.year}</p>
-                <p className="text-sm text-gray-500 ml-4">{exp.location}</p>
+      <div className="relative w-full">
+        {experiences.map((exp, index) => {
+          const isEven = index % 2 === 0;
+          const branchColor = isEven ? "bg-blue-500" : "bg-green-500";
+          const commitColor = isEven ? "border-blue-500" : "border-green-500";
+          const textColor = isEven ? "text-blue-700" : "text-green-700";
+          
+          return (
+            <div key={index} className="mb-16 flex items-start relative">
+              {/* Git branch structure */}
+              <div className="absolute left-0 top-0 bottom-0 w-24 flex justify-center">
+                {/* Main vertical line */}
+                <div className="w-1 bg-gray-300 h-full absolute"></div>
+                
+                {/* Commit node */}
+                <div 
+                  className={`w-5 h-5 rounded-full ${branchColor} z-10 absolute top-0 
+                    border-2 border-white flex items-center justify-center`}
+                >
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                </div>
+                
+                {/* Branch line */}
+                <div 
+                  className={`h-1 ${isEven ? 'w-20' : 'w-12'} ${branchColor} absolute top-2.5 
+                    ${isEven ? 'left-4' : 'right-2.5'}`}
+                ></div>
+                
+                {/* Merge lines for some commits */}
+                {(index === 2 || index === 5) && (
+                  <div 
+                    className={`h-20 w-1 ${isEven ? 'bg-purple-400' : 'bg-orange-400'} 
+                      absolute top-5 ${isEven ? 'left-8' : 'right-4'}`}
+                  ></div>
+                )}
               </div>
-              <ul className="list-disc list-inside text-gray-700 mt-1">
-                {exp.details.map((detail, i) => (
-                  <li key={i}>{detail}</li>
-                ))}
-              </ul>
+
+              {/* Content card */}
+              <div 
+                className={`ml-28 p-4 rounded-lg shadow-md border-l-4 ${commitColor} 
+                  bg-white w-full md:w-4/5 transition-all hover:shadow-lg`}
+              >
+                <div className="flex flex-col md:flex-row justify-between mb-2">
+                  <p className={`font-mono font-semibold text-lg ${textColor}`}>{exp.title}</p>
+                  <div className="flex items-center mt-1 md:mt-0">
+                    <span className="text-xs bg-gray-200 rounded-full px-2 py-1 font-mono">
+                      {exp.year}
+                    </span>
+                    <span className="text-xs bg-gray-100 rounded-full px-2 py-1 ml-2 text-gray-600 font-mono">
+                      @{exp.location}
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="border-t border-dashed border-gray-200 pt-2 mt-2">
+                  <ul className="space-y-1.5">
+                    {exp.details.map((detail, i) => (
+                      <li key={i} className="text-sm text-gray-700 flex items-start">
+                        <span className="text-gray-400 mr-2">•</span>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {/* Git hash - decorative */}
+                <div className="mt-3 text-right">
+                  <span className="text-xs font-mono text-gray-400">
+                    {`commit ${Math.random().toString(16).slice(2, 10)}`}
+                  </span>
+                </div>
+              </div>
             </div>
+          );
+        })}
+        
+        {/* Git initial commit */}
+        <div className="absolute bottom-0 left-0 flex items-center justify-center flex-col">
+          <div className="w-1 bg-gray-300 h-20"></div>
+          <div className="w-7 h-7 rounded-full bg-gray-700 flex items-center justify-center text-white text-xs font-bold">
+            init
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
