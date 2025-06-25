@@ -15,7 +15,7 @@ const AboutMe = () => {
             <p className="text-2xl">Hello, I&apos;m Raphael</p>
             <div className="">
               <p className="text-md">
-                Senior Computer Science and Engineering Major at SCU.
+                M.S Computer Science and Engineering at SCU.
               </p>
               <Separator className="my-2" />
               <div className="flex flex-row items-center text-sm">
@@ -61,8 +61,7 @@ const AboutMe = () => {
           <p className="text-4xl font-semibold">Team Player</p>
           <p className="text-sm font-light text-gray-500">
             {" "}
-            RA, Ultimate Frisbee Player, Recreational Pickleball player, and
-            retired Hackathon Participant
+            RA, Ultimate Frisbee Player, Recreational Pickleball player.
           </p>
           <Carousel2 />
         </div>
@@ -86,7 +85,7 @@ const AboutMe = () => {
           <p className="text-4xl font-semibold">Competitive Programmer</p>
           <p className="text-sm font-light text-gray-500">
             {" "}
-            Attended ICPC, representing Santa Clara University and was #7 in the Pacific Northwest in D2.
+            Attended ICPC Divison 2 representing Santa Clara University, #4 in California.
           </p>
           <Carousel3/>
         </div>

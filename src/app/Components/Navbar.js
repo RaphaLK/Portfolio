@@ -11,7 +11,7 @@ const Navbar = () => {
       <NavigationMenu className="grid grid-cols-3 w-full p-3">
         <div className="transition-all duration-400 ease-in-out text-lg hover:scale-110">
           <NavigationMenuItem className="flex mx-5 p-2 items-center justify-center border-b border-gray-300 hover:animate-pulse">
-            <Link href="/" passHref legacyBehavior>
+            <Link href="/" passHref>
               <NavigationMenuLink>
                 About Me
               </NavigationMenuLink>
@@ -20,7 +20,7 @@ const Navbar = () => {
         </div>
         <div className="transition-all duration-400 ease-in-out text-lg hover:scale-110">
           <NavigationMenuItem className="flex mx-5 p-2 items-center justify-center border-b border-gray-300 hover:animate-pulse">
-            <Link href="/Projects" passHref legacyBehavior>
+            <Link href="/Projects" passHref>
               <NavigationMenuLink>
                 Projects
               </NavigationMenuLink>
@@ -29,7 +29,7 @@ const Navbar = () => {
         </div>
         <div className="transition-all duration-400 ease-in-out text-lg hover:scale-110">
           <NavigationMenuItem className="flex mx-5 p-2 items-center justify-center border-b border-gray-300 hover:animate-pulse">
-            <Link href="/Work" passHref legacyBehavior>
+            <Link href="/Work" passHref>
               <NavigationMenuLink>
                 Experience
               </NavigationMenuLink>
