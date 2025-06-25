@@ -1,20 +1,41 @@
 @import "tailwindcss";
 
-.fade-enter {
+/* Slide Right */
+.slide-right-enter {
+  transform: translateX(100%);
   opacity: 0;
-  transform: translateX(-50%);
 }
-.fade-enter-active {
-  opacity: 1;
+.slide-right-enter-active {
   transform: translateX(0);
-  transition: opacity 500ms, transform 500ms;
-}
-.fade-exit {
   opacity: 1;
-  transform: translateX(0);
+  transition: transform 300ms ease, opacity 300ms ease;
 }
-.fade-exit-active {
+.slide-right-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-right-exit-active {
+  transform: translateX(-100%);
   opacity: 0;
-  transform: translateX(50%);
-  transition: opacity 500ms, transform 500ms;
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+/* Slide Left */
+.slide-left-enter {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.slide-left-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+.slide-left-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-left-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 300ms ease, opacity 300ms ease;
 }
