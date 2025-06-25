@@ -1,8 +1,7 @@
 'use client';
 
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import "./PageTransition.css";
-
+import "./PageTransitions.css"
 const PageTransition = ({ children, locationKey }) => {
   return (
     <TransitionGroup component={null}>

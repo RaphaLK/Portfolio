@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import ExperienceTimeline from "./ExperienceTimeline";
-import PageTransition from "../Components/PageTransition";
+import PageTransition from "@/components/PageTransitions";
 
 export default function Work() {
   return (

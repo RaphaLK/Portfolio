@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import ProjectCard from "./ProjectCard";
-import PageTransition from "../Components/PageTransition";
+import PageTransition from "@/components/PageTransitions";
 
 export default function Projects() {
   return (

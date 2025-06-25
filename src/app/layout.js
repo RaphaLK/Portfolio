@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import TransitionWrapper from "../components/TransitionWrapper";
+import TransitionWrapper from "../components/TransitionWrapper.js";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
