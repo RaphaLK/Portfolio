@@ -55,7 +55,6 @@ export default function AboutMe() {
             <div className="mb-3">
               <h3 className="text-sm font-medium text-gray-600 mb-1.5">Tools & Technologies</h3>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1.5 bg-green-50 text-green-800 rounded-md text-xs font-mono border border-green-200">Qt</span>
                 <span className="px-3 py-1.5 bg-red-50 text-red-800 rounded-md text-xs font-mono border border-red-200">CMake</span>
                 <span className="px-3 py-1.5 bg-red-50 text-red-800 rounded-md text-xs font-mono border border-red-200">gdb</span>
                 <span className="px-3 py-1.5 bg-blue-50 text-blue-800 rounded-md text-xs font-mono border border-blue-200">Linux</span>
@@ -70,6 +69,7 @@ export default function AboutMe() {
             <div className="mb-3">
               <h3 className="text-sm font-medium text-gray-600 mb-1.5">Frameworks</h3>
               <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1.5 bg-green-50 text-green-800 rounded-md text-xs font-mono border border-green-200">Qt</span>
                 <span className="px-3 py-1.5 bg-blue-50 text-blue-800 rounded-md text-xs font-mono border border-blue-200">React</span>
                 <span className="px-3 py-1.5 bg-blue-50 text-blue-800 rounded-md text-xs font-mono border border-blue-200">React Native</span>
                 <span className="px-3 py-1.5 bg-purple-50 text-purple-800 rounded-md text-xs font-mono border border-purple-200">Next.js</span>
