@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "My Portfolio",
-  description: "Welcome to my portfolio website",
+  title: "Raph's Website",
+  description: "Welcome to website!",
 };
 
 export default function RootLayout({ children }) {
