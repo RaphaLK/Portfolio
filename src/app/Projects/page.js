@@ -61,9 +61,9 @@ export default function Projects() {
     {
       title: "React Native Flippable Card",
       description: "React-Native, JavaScript",
-      info: "Created an open-source package to replace a deprecated React-Native package for proper dependency management. Removed old dependencies from the previous package and updated it to suit my need more and ported it over to modern React component standards. So far achieved 500+ downloads!",
-      githubLink: "https://github.com/RaphaLK/react-native-flip-card",
-      projectLink: "https://www.npmjs.com/package/react-native-flip-card-plus",
+      info: "Created an open-source package to replace a deprecated React-Native package for proper dependency management. Removed old dependencies from the previous package and updated it to suit my need more and ported it over to modern React component standards. So far achieved 150+ downloads!",
+      githubLink: "https://github.com/RaphaLK/rn-card-flip",
+      projectLink: "https://www.npmjs.com/package/rn-flippable-card",
     },
 
     {
