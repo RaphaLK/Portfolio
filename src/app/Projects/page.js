@@ -1,9 +1,14 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   const [filter, setFilter] = useState('all');
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   const projects = [
     {
@@ -133,7 +138,9 @@ export default function Projects() {
   return (
     <div className="bg-gray-50 min-h-screen pt-16 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-700 ${
+          isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Projects</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A showcase of my technical work, focusing on systems programming, 
@@ -141,13 +148,15 @@ export default function Projects() {
           </p>
         </div>
         
-        <div className="flex justify-center mb-8">
+        <div className={`flex justify-center mb-8 transition-all duration-700 delay-200 ${
+          isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           <div className="inline-flex rounded-md shadow-sm">
             <button 
               onClick={() => setFilter('all')}
-              className={`px-4 py-2 text-sm font-medium border ${
+              className={`px-4 py-2 text-sm font-medium border transition-all duration-300 hover:scale-105 hover:shadow-md ${
                 filter === 'all' 
-                  ? 'text-white bg-gray-800 border-gray-800' 
+                  ? 'text-white bg-gray-800 border-gray-800 shadow-lg' 
                   : 'text-gray-700 bg-white border-gray-300 hover:bg-gray-50'
               } rounded-l-lg`}
             >
@@ -155,9 +164,9 @@ export default function Projects() {
             </button>
             <button 
               onClick={() => setFilter('systems')}
-              className={`px-4 py-2 text-sm font-medium border-t border-b border-r ${
+              className={`px-4 py-2 text-sm font-medium border-t border-b border-r transition-all duration-300 hover:scale-105 hover:shadow-md ${
                 filter === 'systems' 
-                  ? 'text-white bg-blue-600 border-blue-600' 
+                  ? 'text-white bg-blue-600 border-blue-600 shadow-lg' 
                   : 'text-gray-700 bg-white border-gray-300 hover:bg-gray-50'
               }`}
             >
@@ -165,9 +174,9 @@ export default function Projects() {
             </button>
             <button 
               onClick={() => setFilter('web')}
-              className={`px-4 py-2 text-sm font-medium border-t border-b border-r ${
+              className={`px-4 py-2 text-sm font-medium border-t border-b border-r transition-all duration-300 hover:scale-105 hover:shadow-md ${
                 filter === 'web' 
-                  ? 'text-white bg-green-600 border-green-600' 
+                  ? 'text-white bg-green-600 border-green-600 shadow-lg' 
                   : 'text-gray-700 bg-white border-gray-300 hover:bg-gray-50'
               }`}
             >
@@ -175,9 +184,9 @@ export default function Projects() {
             </button>
             <button 
               onClick={() => setFilter('mobile')}
-              className={`px-4 py-2 text-sm font-medium border-t border-b border-r ${
+              className={`px-4 py-2 text-sm font-medium border-t border-b border-r transition-all duration-300 hover:scale-105 hover:shadow-md ${
                 filter === 'mobile' 
-                  ? 'text-white bg-purple-600 border-purple-600' 
+                  ? 'text-white bg-purple-600 border-purple-600 shadow-lg' 
                   : 'text-gray-700 bg-white border-gray-300 hover:bg-gray-50'
               }`}
             >
@@ -185,9 +194,9 @@ export default function Projects() {
             </button>
             <button 
               onClick={() => setFilter('ml')}
-              className={`px-4 py-2 text-sm font-medium border-t border-b border-r ${
+              className={`px-4 py-2 text-sm font-medium border-t border-b border-r transition-all duration-300 hover:scale-105 hover:shadow-md ${
                 filter === 'ml' 
-                  ? 'text-white bg-amber-600 border-amber-600' 
+                  ? 'text-white bg-amber-600 border-amber-600 shadow-lg' 
                   : 'text-gray-700 bg-white border-gray-300 hover:bg-gray-50'
               } rounded-r-lg`}
             >
@@ -198,7 +207,13 @@ export default function Projects() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
-            <div key={index} className="h-full">
+            <div 
+              key={index} 
+              className={`h-full transition-all duration-700 hover:scale-105 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${400 + index * 100}ms` }}
+            >
               <ProjectCard
                 ProjectTitle={project.title}
                 ProjectDescription={project.description}
