@@ -116,7 +116,7 @@ export default function Projects() {
   // Helper function to determine project category
   function getProjectCategory(description) {
     const desc = description.toLowerCase();
-    if (desc.includes('c++') || desc.includes('rust') || desc.includes('os development') || 
+    if (desc.includes('c++') || desc.includes('rust') || desc.includes('os development') || desc.includes('kernel') ||
         desc.includes('assembly') || desc.includes('verilog') || desc.includes('llvm')) {
       return 'systems';
     } else if (desc.includes('react native') || desc.includes('flutter') || desc.includes('expo')) {

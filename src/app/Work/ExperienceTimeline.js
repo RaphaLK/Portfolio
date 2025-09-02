@@ -2,6 +2,14 @@ import React from "react";
 
 const ExperienceTimeline = () => {
   const experiences = [
+        {
+      title: "SCU School of Engineering - Grader",
+      year: "Sept. 2025 - Present",
+      location: "Santa Clara, CA",
+      details: [
+        "Grading for CSEN 275: Object Oriented Programming, Design, and Analysis.",
+      ],
+    },
     {
       title: "HCI Lab - Full Stack Developer (SMAR)",
       year: "April 2025 - Present",
