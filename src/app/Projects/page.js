@@ -7,9 +7,15 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "Netfilter Packet Sniffer",
+      description: "C, Netfilter, QEMU, Kernel Development",
+      info: "Developed a kernel module for a packet sniffer using C and the Netfilter library. Tested on an Ubuntu VM, creates kernel logs displaying outputs of incoming/outgoing packets.",
+      githubLink: "https://github.com/RaphaLK/Netfilter-Packet-Sniffer",
+    },
+    {
       title: "RustOS",
       description: "Rust, x86_64, QEMU, Assembly, OS Development",
-      info: "Developed a microkernel operating system in Rust based on the principles from Philip Opperman's blog. Implemented memory management with paging, interrupt handling, and a basic VGA text buffer driver. Currently working on process scheduling and a minimal shell interface.",
+      info: "Developed a operating system in Rust based on the principles from Philip Opperman's blog. Implemented interrupt handling, and a basic VGA text buffer driver. Currently working on process scheduling and a minimal shell interface.",
       githubLink: "https://github.com/RaphaLK/MiniRustOS",
     },
     {
