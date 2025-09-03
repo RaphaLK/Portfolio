@@ -85,7 +85,7 @@ export default function PageTransition({ children }) {
     }, 100);
 
     return () => clearTimeout(forceCheck);
-  }, [pathname, handleTransition]);
+  }, [pathname, prevPathname, handleTransition]);
 
   // Handle transition end
   const onExited = () => {

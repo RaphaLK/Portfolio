@@ -92,7 +92,7 @@ export default function AboutMe() {
         <div className="flex flex-col relative">
           <div className="mb-4">
             <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
-              Hello, I'm Raphael
+              Hello, I&apos;m Raphael
             </h1>
             <TypingAnimation 
               text="MS Computer Science and Engineering @ SCU" 
@@ -179,7 +179,7 @@ export default function AboutMe() {
             <a href="mailto:raphaelkusuma5@gmail.com" className="group">
               <Button className="bg-gradient-to-r from-slate-700 to-slate-900 hover:from-slate-800 hover:to-black text-white px-4 py-3 rounded-lg shadow-lg transform group-hover:scale-105 transition-all duration-200">
                 <span className="flex items-center gap-2">
-                  💬 Let's Connect
+                  💬 Let&apos;s Connect
                 </span>
               </Button>
             </a>
@@ -221,10 +221,10 @@ export default function AboutMe() {
                 </h2>
               </div>
               <p className="text-slate-300 mb-6 leading-relaxed text-lg">
-                I'm currently developing a microkernel operating system in <span className="text-orange-400 font-semibold">Rust</span>,
+                I&apos;m currently developing a microkernel operating system in <span className="text-orange-400 font-semibold">Rust</span>,
                 focusing on memory safety and high performance based on Philip
-                Opperman's blog. I'm also strengthening my <span className="text-blue-400 font-semibold">C++</span> expertise through advanced 
-                system programming, studying Scott Meyer's Effective Modern C++, and implementing
+                Opperman&apos;s blog. I&apos;m also strengthening my <span className="text-blue-400 font-semibold">C++</span> expertise through advanced 
+                system programming, studying Scott Meyer&apos;s Effective Modern C++, and implementing
                 low-level network interfaces with tools like CMake, gdb, and Qt.
               </p>
               <div className="flex flex-wrap gap-3">
@@ -325,8 +325,8 @@ export default function AboutMe() {
               </div>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Experienced Resident Assistant, University Library Student
-                Assistant. Got an award for "Most Caring" and "Most likely to know
-                a resident's name" :)
+                Assistant. Got an award for &quot; Most Caring&quot;  and &quot; Most likely to know
+                a resident&apos;s name&quot; :)
               </p>
               <div className="h-48 overflow-hidden rounded-lg relative group">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -350,7 +350,7 @@ export default function AboutMe() {
                 </h3>
               </div>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                As an RA, I had access to the residence hall's camera. I took professional headshots and macroshots of nature.
+                As an RA, I had access to the residence hall&apos;s camera. I took professional headshots and macroshots of nature.
               </p>
               <div className="h-48 flex overflow-hidden rounded-lg justify-center">
                 <div className="rounded-lg transform hover:scale-105 transition-transform duration-300">
