@@ -207,11 +207,9 @@ export default function AboutMe() {
                 </h2>
               </div>
               <p className="text-slate-300 mb-6 leading-relaxed text-lg">
-                I&apos;m currently developing a microkernel operating system in <span className="text-orange-400 font-semibold">Rust</span>,
-                focusing on memory safety and high performance based on Philip
-                Opperman&apos;s blog. I&apos;m also strengthening my <span className="text-blue-400 font-semibold">C++</span> expertise through advanced 
-                system programming, studying Scott Meyer&apos;s Effective Modern C++, and implementing
-                low-level network interfaces with tools like CMake, gdb, and Qt.
+                I&apos;m currently developing a operating system in <span className="text-orange-400 font-semibold">Rust</span>,
+                based on Philip Opperman&apos;s blog. I&apos;m also strengthening my <span className="text-blue-400 font-semibold">C++</span> skills through advanced 
+                system programming, studying Scott Meyer&apos;s Effective Modern C++, and I'm experimenting with Linux Kernel Development.
               </p>
               <div className="flex flex-wrap gap-3">
                 <span className="px-4 py-2 bg-orange-500 bg-opacity-20 text-orange-200 rounded-lg text-sm font-mono border border-orange-600 backdrop-blur-sm hover:bg-opacity-30 transition-all duration-200">
@@ -222,9 +220,6 @@ export default function AboutMe() {
                 </span>
                 <span className="px-4 py-2 bg-blue-500 bg-opacity-20 text-blue-200 rounded-lg text-sm font-mono border border-blue-600 backdrop-blur-sm hover:bg-opacity-30 transition-all duration-200">
                   🐧 Linux Systems
-                </span>
-                <span className="px-4 py-2 bg-green-500 bg-opacity-20 text-green-200 rounded-lg text-sm font-mono border border-green-600 backdrop-blur-sm hover:bg-opacity-30 transition-all duration-200">
-                  🌐 Low-level Networking
                 </span>
               </div>
             </div>
