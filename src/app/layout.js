@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Inter } from 'next/font/google';
 import Navbar from './Components/Navbar';
-import TransitionWrapper from "../components/TransitionWrapper.js";
+import TransitionWrapper from "@/components/TransitionWrapper";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -59,9 +59,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <TransitionWrapper>
+        <div className={"mt-15"}>
           {children}
-        </TransitionWrapper>
+        </div>
       </body>
     </html>
   );

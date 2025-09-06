@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { SocialIcon } from "react-social-icons";
 import Carousel1 from "./Carousel1";
@@ -49,6 +49,12 @@ const TypingAnimation = ({ text, className = "" }) => (
 );
 
 export default function AboutMe() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
     <div className="max-w-6xl mx-auto px-4 pt-10 pb-16 relative">
       {/* Animated background elements */}
@@ -59,7 +65,9 @@ export default function AboutMe() {
       </div>
 
       {/* Hero Section with enhanced styling */}
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12 relative z-10">
+      <div className={`flex flex-col md:flex-row items-center md:items-start gap-8 mb-12 relative z-10 transition-all duration-700 ${
+        isLoaded ? 'opacity-100' : 'opacity-0'
+      }`}>
         {/* Profile Image with cool effects */}
         <div className="shrink-0 relative group">
           <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
@@ -189,7 +197,10 @@ export default function AboutMe() {
       </div>
 
       {/* Current Project Highlight with enhanced styling */}
-      <GlowingCard className="mb-12">
+      <div className={`transition-all duration-700 delay-300 ${
+        isLoaded ? 'opacity-100' : 'opacity-0'
+      }`}>
+        <GlowingCard className="mb-12">
         <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-10 rounded-xl shadow-2xl border border-slate-700 relative overflow-hidden">
           {/* Animated background particles */}
           <div className="absolute inset-0 opacity-10">
@@ -238,11 +249,13 @@ export default function AboutMe() {
               </div>
             </div>
           </div>
-        </div>
-      </GlowingCard>
+        </div>        </GlowingCard>
+      </div>
 
       {/* Additional Highlights with enhanced cards */}
-      <div className="bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-2xl shadow-inner border border-slate-200">
+      <div className={`bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-2xl shadow-inner border border-slate-200 transition-all duration-700 delay-500 ${
+        isLoaded ? 'opacity-100' : 'opacity-0'
+      }`}>
         <h2 className="text-3xl font-bold mb-8 text-slate-800 text-center">
           <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             🌟 Additional Highlights
@@ -250,7 +263,10 @@ export default function AboutMe() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <GlowingCard>
+          <div className={`transition-all duration-700 delay-700 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}>
+            <GlowingCard>
             <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-100 h-full">
               <div className="flex items-center mb-4">
                 <span className="text-2xl mr-3">🎓</span>
@@ -295,8 +311,12 @@ export default function AboutMe() {
               </div>
             </div>
           </GlowingCard>
+          </div>
 
-          <GlowingCard>
+          <div className={`transition-all duration-700 delay-900 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}>
+            <GlowingCard>
             <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 h-full">
               <div className="flex items-center mb-4">
                 <span className="text-2xl mr-3">🤝</span>
@@ -321,8 +341,12 @@ export default function AboutMe() {
               </div>
             </div>
           </GlowingCard>
+          </div>
 
-          <GlowingCard>
+          <div className={`transition-all duration-700 delay-1100 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}>
+            <GlowingCard>
             <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 h-full">
               <div className="flex items-center mb-4">
                 <span className="text-2xl mr-3">📸</span>
@@ -340,8 +364,12 @@ export default function AboutMe() {
               </div>
             </div>
           </GlowingCard>
+          </div>
 
-          <GlowingCard>
+          <div className={`transition-all duration-700 delay-1300 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}>
+            <GlowingCard>
             <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 h-full">
               <div className="flex items-center mb-4">
                 <span className="text-2xl mr-3">🏆</span>
@@ -364,6 +392,7 @@ export default function AboutMe() {
               </div>
             </div>
           </GlowingCard>
+          </div>
         </div>
       </div>
     </div>
