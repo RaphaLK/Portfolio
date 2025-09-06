@@ -1,26 +1,11 @@
 "use client"
 import Image from "next/image";
 import React from "react";
-import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { SocialIcon } from "react-social-icons";
 import Carousel1 from "./Carousel1";
-import Carousel2 from "./Carousel2";
-import { Card } from "@/components/ui/card";
 import "./animations.css";
 
-// Add cool animations and effects
-const FloatingIcon = ({ children, delay = 0 }) => (
-  <div 
-    className="animate-bounce inline-block" 
-    style={{ 
-      animationDelay: `${delay}s`,
-      animationDuration: '3s'
-    }}
-  >
-    {children}
-  </div>
-);
 
 const GlowingCard = ({ children, className = "" }) => (
   <div className={`relative group ${className}`}>
@@ -57,6 +42,7 @@ const TypingAnimation = ({ text, className = "" }) => (
       .blinking-cursor {
         animation: blink-caret .75s step-end infinite;
         color: orange;
+        opacity: 0;
       }
     `}</style>
   </div>
