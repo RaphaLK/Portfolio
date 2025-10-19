@@ -308,9 +308,6 @@ export default function AboutMe() {
                   with Linux Kernel Development.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-orange-500 bg-opacity-20 text-orange-200 rounded-lg text-sm font-mono border border-orange-600 backdrop-blur-sm hover:bg-opacity-30 transition-all duration-200">
-                    🧠 Memory Management
-                  </span>
                   <span className="px-4 py-2 bg-purple-500 bg-opacity-20 text-purple-200 rounded-lg text-sm font-mono border border-purple-600 backdrop-blur-sm hover:bg-opacity-30 transition-all duration-200">
                     🔧 Kernel Development
                   </span>

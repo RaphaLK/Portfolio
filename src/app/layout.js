@@ -9,10 +9,10 @@ const inter = Inter({
 
 export const metadata = {
   title: {
-    default: "Raphael Kusuma - Aspiring Systems Software Engineer",
+    default: "Raphael Kusuma - Aspiring Software Engineer",
     template: "%s | Raphael Kusuma"
   },
-  description: "M.S. Computer Science student at SCU specializing in systems programming, C++, Rust, and full-stack development. Portfolio showcasing projects in OS development, compilers, and web applications.",
+  description: "M.S. Computer Science and Engineering @ SCU. Portfolio showcasing projects in OS development, compilers, and web applications.",
   keywords: ["Raphael Kusuma", "Software Engineer", "Systems Programming", "C++", "Rust", "React", "Full Stack Developer", "Santa Clara University", "Computer Science"],
   authors: [{ name: "Raphael Kusuma" }],
   creator: "Raphael Kusuma",
@@ -32,11 +32,11 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://raphaelkusuma.vercel.app/', 
-    title: 'Raphael Kusuma - Software Engineer & Systems Developer',
-    description: 'M.S. Computer Science student specializing in systems programming, C++, Rust, and full-stack development.',
+    title: 'Raphael Kusuma - Software Engineer',
+    description: 'M.S. Computer Science and Engineering @ Santa Clara University.',
     siteName: 'Raphael Kusuma Portfolio',
     images: [{
-      url: 'https://raphaelkusuma.vercel.app/Assets/MyPhoto.jpg', 
+      url: 'https://raphaelkusuma.me/Assets/MyPhoto.jpg', 
       width: 1200,
       height: 630,
       alt: 'Raphael Kusuma - Software Engineer',
@@ -44,9 +44,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Raphael Kusuma - Software Engineer & Systems Developer',
-    description: 'M.S. Computer Science student specializing in systems programming, C++, Rust, and full-stack development.',
-    images: ['https://your-domain.com/Assets/MyPhoto.jpg'], 
+    title: 'Raphael Kusuma - Software Engineer',
+    description: 'M.S. Computer Science and Engineering @ Santa Clara University.',
+    images: ['https://raphaelkusuma.me/Assets/MyPhoto.jpg'], 
   },
   verification: {
     // google: 'your-google-site-verification-code',
