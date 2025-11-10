@@ -71,7 +71,7 @@ export default function AboutMe() {
           <p className="text-sm font-light text-gray-500">
             {" "}
             As an RA, I was an avid photographer for a while. I captured
-            professional headshots and nature.
+            professional headshots and nature. 
           </p>
           <Carousel1 />
         </div>

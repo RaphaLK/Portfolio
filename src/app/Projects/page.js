@@ -43,7 +43,7 @@ export default function Projects() {
       title: "Systemic Mobile App Reviews",
       description: "React, Node.js, BullMQ, AWS, MongoDB, Nginx",
       info: "Enhanced a web platform for non-technical researchers to systematically analyze mobile applications.",
-      githubLink: "https://github.com/RaphaLK/SMAR",
+      githubLink: "https://scholarcommons.scu.edu/cseng_senior/252/",
     },
     {
       title: "Vocal sEMG Translation System",
@@ -106,7 +106,7 @@ export default function Projects() {
       title: "Allescan",
       description: "Flutter, Firebase, Google Vision API",
       info: "Allescan was my first Hackathon Project. I worked on the Front End and Firebase Integration. We utilized the Google Vision API to identify nutrient labels and identify and user allergens. This was an incredible learning experience and was my first introduction to Mobile App Development.",
-      projectLink: "https://devpost.com/software/allescan",
+      projectLink: "https://devpost.com/software/hi-9cjrfo",
     },
   ];
 

@@ -135,6 +135,9 @@ export default function AboutMe() {
                 <span className="px-4 py-2 bg-gradient-to-r from-orange-50 to-orange-100 text-orange-800 rounded-lg text-sm font-mono border border-orange-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                   Rust
                 </span>
+                <span className="px-4 py-2 bg-gradient-to-r from-orange-50 to-orange-100 text-orange-800 rounded-lg text-sm font-mono border border-orange-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                  Java
+                </span>
                 <span className="px-4 py-2 bg-gradient-to-r from-yellow-50 to-yellow-100 text-yellow-800 rounded-lg text-sm font-mono border border-yellow-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                   Python
                 </span>
@@ -303,9 +306,8 @@ export default function AboutMe() {
                   based on Philip Opperman&apos;s blog. I&apos;m also
                   strengthening my{" "}
                   <span className="text-blue-400 font-semibold">C++</span>{" "}
-                  skills through advanced system programming, studying Scott
-                  Meyer&apos;s Effective Modern C++, and I&apos;sm experimenting
-                  with Linux Kernel Development.
+                  skills through system programming, for example, I&apos;m
+                  experimenting with Linux Kernel Development.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <span className="px-4 py-2 bg-purple-500 bg-opacity-20 text-purple-200 rounded-lg text-sm font-mono border border-purple-600 backdrop-blur-sm hover:bg-opacity-30 transition-all duration-200">
@@ -370,7 +372,8 @@ export default function AboutMe() {
                       Santa Clara University
                     </p>
                     <p className="text-slate-600 text-sm">
-                      Focus: Systems & Robotics
+                      Still in HCI and EPIC Lab! Recreational Pickleball and a
+                      TA/Grader.
                     </p>
                     <div className="flex items-center mt-2">
                       <span className="text-yellow-500 text-sm">⭐</span>
@@ -420,8 +423,14 @@ export default function AboutMe() {
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Experienced Resident Assistant, University Library Student
-                  Assistant. Got an award for &quot; Most Caring&quot; and
-                  &quot; Most likely to know a resident&apos;s name&quot; :)
+                  Assistant. Got an award for{" "}
+                  <span className="font-bold">&quot;Most Caring&quot; </span>{" "}
+                  and
+                  <span className="font-bold">
+                    &quot; Most likely to know a resident&apos;s name&quot;{" "}
+                  </span>
+                  :)
+                  Also improved a good amount of days by listening to them at the Front Desk!
                 </p>
                 <div className="h-48 overflow-hidden rounded-lg relative group">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

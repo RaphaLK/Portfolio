@@ -63,7 +63,7 @@ export default function Work() {
           <div className="mt-4 font-mono text-sm text-green-400 flex items-center">
             <span className="text-blue-400">raphael@portfolio</span>
             <span className="text-white">:</span>
-            <span className="text-purple-400">~/work$</span>
+            <span className="text-purple-400">~/experience-timeline $</span>
             <span className="ml-2 animate-pulse">cat experience.log</span>
             <span className="ml-1 animate-ping">|</span>
           </div>

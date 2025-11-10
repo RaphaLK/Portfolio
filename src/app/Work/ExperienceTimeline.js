@@ -59,6 +59,8 @@ const ExperienceTimeline = () => {
       location: "Santa Clara, CA",
       details: [
         "Grading for CSEN 275: Object Oriented Programming, Design, and Analysis.",
+        "Checking assignments written in Java, and assessing knowledge in Design Patterns",
+        "Grading for CSEN 225: Secure Coding in C/C++.",
       ],
     },
     {
@@ -158,7 +160,7 @@ const ExperienceTimeline = () => {
       <div className="relative mb-8 w-full">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 rounded-lg blur-md opacity-10"></div>
         <h2 className="relative text-4xl font-bold text-center bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 bg-clip-text text-transparent py-4">
-          💻 Work Experience Journey 🚀
+          💻 Work Experience 🚀
         </h2>
         <div className="flex flex-wrap justify-center gap-8 text-center mb-3">
           <div className="flex flex-col items-center">
