@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import "./timeline.css";
 
 const ExperienceTimeline = () => {
@@ -24,6 +25,16 @@ const ExperienceTimeline = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Get company logo
+  const getCompanyLogo = (title) => {
+    if (title.includes("Google")) return "/Assets/Google.png";
+    if (title.includes("Grader") || title.includes("Library") || title.includes("Advisor")) return "/Assets/Santa_Clara_U_Seal.png";
+    if (title.includes("HCI Lab") || title.includes("SMAR")) return "/Assets/SCU_HCI.jpeg";
+    if (title.includes("EPIC Lab") || title.includes("PTHub")) return "/Assets/EPIC_Lab.png";
+    if (title.includes("Anritsu")) return "/Assets/Anritsu.png";
+    return null;
+  };
 
   // Cool tech icons for different roles
   const getTechIcon = (title) => {
@@ -65,6 +76,14 @@ const ExperienceTimeline = () => {
       ],
     },
     {
+      title: "EPIC Lab - Full Stack Mobile Developer (GoodBuys)",
+      year: "May 2023 - Present",
+      location: "Santa Clara, CA",
+      details: [
+        "Built a React Native mobile app to trace the ethical labels of brands."
+      ]
+    },
+    {
       title: "SCU School of Engineering - Grader",
       year: "Sept. 2025 - Present",
       location: "Santa Clara, CA",
@@ -85,7 +104,7 @@ const ExperienceTimeline = () => {
       ],
     },
     {
-      title: "EPIC Lab - Mobile Team Lead (PTHub)",
+      title: "EPIC Lab - Full Stack Developer & Team Lead (PTHub)",
       year: "May 2023 - Present",
       location: "Santa Clara, CA",
       details: [
@@ -207,6 +226,7 @@ const ExperienceTimeline = () => {
           const isHovered = hoveredIndex === index;
           const gradient = getGradientClass(index);
           const techIcon = getTechIcon(exp.title);
+          const companyLogo = getCompanyLogo(exp.title);
 
           return (
             <div
@@ -288,9 +308,20 @@ const ExperienceTimeline = () => {
                   {/* Header with animated elements */}
                   <div className="flex flex-col md:flex-row justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <span className={`text-2xl ${exp.isHighlighted || isHovered ? 'animate-bounce' : ''}`}>
-                        {techIcon}
-                      </span>
+                      {companyLogo ? (
+                        <div className={`relative w-10 h-10 rounded-lg overflow-hidden bg-white shadow-md flex-shrink-0 ${exp.isHighlighted || isHovered ? 'animate-bounce' : ''}`}>
+                          <Image
+                            src={companyLogo}
+                            alt={`${exp.title} logo`}
+                            fill
+                            className="object-contain p-1"
+                          />
+                        </div>
+                      ) : (
+                        <span className={`text-2xl ${exp.isHighlighted || isHovered ? 'animate-bounce' : ''}`}>
+                          {techIcon}
+                        </span>
+                      )}
                       <h3
                         className={`font-bold text-xl bg-gradient-to-r ${gradient} bg-clip-text text-transparent
                         ${isHovered ? "animate-pulse" : ""} ${exp.isHighlighted ? "text-2xl" : ""}`}
