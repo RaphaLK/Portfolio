@@ -27,15 +27,17 @@ const ExperienceTimeline = () => {
 
   // Cool tech icons for different roles
   const getTechIcon = (title) => {
-    if (title.includes("Engineering") || title.includes("Developer"))
-      return "⚡";
-    if (title.includes("Lab")) return "🔬";
-    if (title.includes("Intern")) return "💻";
+    if (title.includes("Google")) return "🔍";
+    if (title.includes("Grader")) return "📝";
+    if (title.includes("HCI Lab") || title.includes("SMAR")) return "🔬";
+    if (title.includes("EPIC Lab") || title.includes("PTHub")) return "�";
+    if (title.includes("Anritsu")) return "�";
     if (title.includes("Tutor")) return "👩‍🏫";
     if (title.includes("Advisor")) return "🏠";
     if (title.includes("Library")) return "📚";
     if (title.includes("Musical")) return "🎵";
-    return "🚀";
+    if (title.includes("Springfield")) return "🏆";
+    return "�";
   };
 
   const getGradientClass = (index) => {
@@ -53,6 +55,15 @@ const ExperienceTimeline = () => {
     return gradients[index % gradients.length];
   };
   const experiences = [
+    {
+      title: "Google - Software Engineering Intern",
+      year: "Upcoming Summer 2026",
+      location: "Kirkland, WA",
+      isHighlighted: true,
+      details: [
+        "🎉 Excited to join Google's Chrome Remote Desktop team!",
+      ],
+    },
     {
       title: "SCU School of Engineering - Grader",
       year: "Sept. 2025 - Present",
@@ -120,7 +131,7 @@ const ExperienceTimeline = () => {
     },
     {
       title: "University Library Student Assistant",
-      year: "Apr. 2022 - Present",
+      year: "Apr. 2022 - Jun. 2025",
       location: "Santa Clara, CA",
       details: [
         "Audited archival materials, moved current materials into the archive.",
@@ -204,7 +215,7 @@ const ExperienceTimeline = () => {
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
-              }`}
+              } ${exp.isHighlighted ? 'scale-105' : ''}`}
               data-index={index}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
@@ -249,10 +260,18 @@ const ExperienceTimeline = () => {
                 className={`ml-28 relative group transition-all duration-500 w-full md:w-4/5
                 ${isHovered ? "transform -translate-y-2" : ""}`}
               >
+                {/* Special highlighting for Google */}
+                {exp.isHighlighted && (
+                  <>
+                    <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-red-500 via-yellow-500 to-green-500 rounded-xl blur-lg opacity-30 animate-pulse"></div>
+                    <div className="absolute -top-6 -right-2 text-4xl animate-bounce">⭐</div>
+                  </>
+                )}
+                
                 {/* Glowing background effect */}
                 <div
                   className={`absolute -inset-1 bg-gradient-to-r ${gradient} rounded-xl blur-sm opacity-0
-                  group-hover:opacity-25 transition-all duration-300`}
+                  group-hover:opacity-25 transition-all duration-300 ${exp.isHighlighted ? 'opacity-20' : ''}`}
                 ></div>
 
                 {/* Main card */}
@@ -263,20 +282,26 @@ const ExperienceTimeline = () => {
                     "to-transparent "
                   )}
                   shadow-lg hover:shadow-2xl transition-all duration-300
-                  ${isHovered ? "shadow-2xl border-l-8" : ""}`}
+                  ${isHovered ? "shadow-2xl border-l-8" : ""}
+                  ${exp.isHighlighted ? "border-l-8 shadow-2xl ring-2 ring-blue-400/50" : ""}`}
                 >
                   {/* Header with animated elements */}
                   <div className="flex flex-col md:flex-row justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl animate-bounce">
+                      <span className={`text-2xl ${exp.isHighlighted || isHovered ? 'animate-bounce' : ''}`}>
                         {techIcon}
                       </span>
                       <h3
                         className={`font-bold text-xl bg-gradient-to-r ${gradient} bg-clip-text text-transparent
-                        ${isHovered ? "animate-pulse" : ""}`}
+                        ${isHovered ? "animate-pulse" : ""} ${exp.isHighlighted ? "text-2xl" : ""}`}
                       >
                         {exp.title}
                       </h3>
+                      {exp.isHighlighted && (
+                        <span className="text-xs bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-2 py-1 rounded-full font-bold animate-pulse">
+                          NEW
+                        </span>
+                      )}
                     </div>
 
                     <div className="flex items-center gap-2 mt-2 md:mt-0">
@@ -364,19 +389,6 @@ const ExperienceTimeline = () => {
           <span className="text-xs font-mono text-gray-500 mt-2 animate-pulse">
             git init
           </span>
-        </div>
-
-        {/* Floating success metrics */}
-        <div
-          className="absolute top-10 right-10 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg
-          border border-gray-200 animate-float hidden lg:block"
-        >
-          <div className="text-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
-              {experiences.length}+
-            </div>
-            <div className="text-xs text-gray-600">Positions</div>
-          </div>
         </div>
       </div>
     </div>
