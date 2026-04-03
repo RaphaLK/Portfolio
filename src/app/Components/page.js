@@ -1,512 +1,163 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { SocialIcon } from "react-social-icons";
 import Carousel1 from "./Carousel1";
 import FloatingCube3D from "./FloatingCube3D";
-import "./animations.css";
 
-const GlowingCard = ({ children, className = "" }) => (
-  <div className={`relative group ${className}`}>
-    <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-    <div className="relative bg-white rounded-lg">{children}</div>
-  </div>
-);
+const SKILLS = {
+  Languages: { items: ["C++", "C", "Rust", "Java", "Python", "Bash", "JavaScript", "TypeScript", "SQL"], color: "text-blue-600" },
+  "Tools & DevOps": { items: ["CMake", "gdb", "Linux", "Git", "Docker", "GCP", "Firebase", "Jenkins"], color: "text-emerald-600" },
+  "Frameworks": { items: ["Qt", "React", "React Native", "Next.js", "Node.js", "Express.js", "Flask"], color: "text-violet-600" },
+};
 
-const TypingAnimation = ({ text, className = "" }) => (
-  <div className={className}>
-    <span className="typing-animation font-mono">{text}</span>
-    <span className="blinking-cursor">|</span>
-    <style jsx>{`
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
-      @keyframes blink-caret {
-        from,
-        to {
-          border-color: transparent;
-        }
-        50% {
-          border-color: orange;
-        }
-      }
-      .typing-animation {
-        overflow: hidden;
-        border-right: 0.15em solid orange;
-        white-space: nowrap;
-        margin: 0 auto;
-        letter-spacing: 0.15em;
-        animation: typing 3.5s steps(40, end),
-          blink-caret 0.75s step-end infinite;
-      }
-      .blinking-cursor {
-        animation: blink-caret 0.75s step-end infinite;
-        color: orange;
-        opacity: 0;
-      }
-    `}</style>
-  </div>
-);
+const INTERESTS = ["Pickleball", "Ultimate Frisbee", "Coffee", "Boxing", "Photography"];
 
 export default function AboutMe() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
   return (
-    <div className="max-w-6xl mx-auto px-4 pt-10 pb-16 relative">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div
-          className="absolute top-40 right-10 w-32 h-32 bg-gradient-to-r from-yellow-400 to-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"
-          style={{ animationDelay: "2s" }}
-        ></div>
-        <div
-          className="absolute bottom-20 left-20 w-32 h-32 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"
-          style={{ animationDelay: "4s" }}
-        ></div>
-      </div>
-
-      {/* Hero Section with enhanced styling */}
-      <div
-        className={`flex flex-col md:flex-row items-center md:items-start gap-8 mb-12 relative z-10 transition-all duration-700 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        {/* Profile Image with cool effects */}
-        <div className="flex-column">
-          <div className="shrink-0 relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
-            <div className="relative">
-              <Image
-                src="/Assets/MyPhoto.jpg"
-                width={300}
-                height={300}
-                className="rounded-xl shadow-2xl object-cover border-4 border-white transform hover:scale-105 transition-transform duration-300"
-                alt="Raphael Kusuma - Software Engineer and Computer Science student at Santa Clara University"
-              />
-            </div>
-          </div>
-          {/* 3D Animation below the picture */}
+    <div className="max-w-5xl mx-auto px-6 pt-10 pb-16">
+      {/* Hero */}
+      <div className="flex flex-col md:flex-row items-start gap-10 mb-16">
+        <div className="flex-shrink-0">
+          <Image
+            src="/Assets/MyPhoto.jpg"
+            width={220}
+            height={220}
+            className="rounded-xl object-cover border border-gray-200 shadow-sm"
+            alt="Raphael Kusuma"
+          />
           <div className="mt-6">
             <FloatingCube3D />
           </div>
         </div>
 
-        {/* Introduction & Contact with enhanced styling */}
-        <div className="flex flex-col relative">
-          <div className="mb-4">
-            <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
-              Hello, I&apos;m Raphael
-            </h1>
-            <TypingAnimation
-              text="MS Computer Science and Engineering @ SCU"
-              className="text-lg text-orange-600 font-semibold mb-4"
-            />
+        <div className="flex flex-col gap-6 flex-1">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">Hello, I&apos;m Raphael</h1>
+            <p className="text-gray-500 mt-1 text-sm">MS Computer Science and Engineering @ SCU</p>
           </div>
 
-          {/* Technical Skills with enhanced visual design */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-gray-800 flex items-center">
-              <span className="mr-3">🚀</span>
-              Technical Arsenal
-            </h2>
-
-            <div className="mb-4">
-              <h3 className="text-sm font-bold text-gray-600 mb-3 uppercase tracking-wider">
-                Programming Languages
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-gradient-to-r from-slate-100 to-slate-200 text-slate-800 rounded-lg text-sm font-mono border border-slate-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  C++
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-slate-100 to-slate-200 text-slate-800 rounded-lg text-sm font-mono border border-slate-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  C
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-orange-50 to-orange-100 text-orange-800 rounded-lg text-sm font-mono border border-orange-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Rust
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-orange-50 to-orange-100 text-orange-800 rounded-lg text-sm font-mono border border-orange-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Java
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-yellow-50 to-yellow-100 text-yellow-800 rounded-lg text-sm font-mono border border-yellow-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Python
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 text-gray-800 rounded-lg text-sm font-mono border border-gray-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Bash
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-800 rounded-lg text-sm font-mono border border-blue-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  JavaScript
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-800 rounded-lg text-sm font-mono border border-blue-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  TypeScript
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-indigo-50 to-indigo-100 text-indigo-800 rounded-lg text-sm font-mono border border-indigo-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  SQL
-                </span>
+          {/* Skills */}
+          <div className="space-y-4">
+            {Object.entries(SKILLS).map(([category, { items, color }]) => (
+              <div key={category}>
+                <p className={`text-xs font-semibold uppercase tracking-wider mb-2 ${color}`}>{category}</p>
+                <div className="flex flex-wrap gap-2">
+                  {items.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded text-xs font-mono border border-gray-200"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
+          </div>
 
-            <div className="mb-4">
-              <h3 className="text-sm font-bold text-gray-600 mb-3 uppercase tracking-wider">
-                Tools & Technologies
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-gradient-to-r from-red-50 to-red-100 text-red-800 rounded-lg text-sm font-mono border border-red-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  CMake
+          {/* Interests */}
+          <div>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Beyond Code</p>
+            <div className="flex flex-wrap gap-2">
+              {INTERESTS.map((interest) => (
+                <span
+                  key={interest}
+                  className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs border border-gray-200"
+                >
+                  {interest}
                 </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-red-50 to-red-100 text-red-800 rounded-lg text-sm font-mono border border-red-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  gdb
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-800 rounded-lg text-sm font-mono border border-blue-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Linux
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 text-gray-800 rounded-lg text-sm font-mono border border-gray-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Git
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-800 rounded-lg text-sm font-mono border border-blue-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Docker
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-green-50 to-green-100 text-green-800 rounded-lg text-sm font-mono border border-green-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  GCP
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-orange-50 to-orange-100 text-orange-800 rounded-lg text-sm font-mono border border-orange-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Firebase
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-800 rounded-lg text-sm font-mono border border-blue-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Jenkins
-                </span>
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <h3 className="text-sm font-bold text-gray-600 mb-3 uppercase tracking-wider">
-                Frameworks & Libraries
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-gradient-to-r from-green-50 to-green-100 text-green-800 rounded-lg text-sm font-mono border border-green-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Qt
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-cyan-50 to-cyan-100 text-cyan-800 rounded-lg text-sm font-mono border border-cyan-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  React
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-cyan-50 to-cyan-100 text-cyan-800 rounded-lg text-sm font-mono border border-cyan-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  React Native
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-purple-50 to-purple-100 text-purple-800 rounded-lg text-sm font-mono border border-purple-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Next.js
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-green-50 to-green-100 text-green-800 rounded-lg text-sm font-mono border border-green-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Node.js
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-green-50 to-green-100 text-green-800 rounded-lg text-sm font-mono border border-green-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Express.js
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-800 rounded-lg text-sm font-mono border border-blue-300 hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  Flask
-                </span>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Personal Interests with enhanced styling */}
-          <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4 text-gray-800 flex items-center">
-              <span className="mr-3">🎯</span>
-              Beyond Code
-            </h2>
-            <div className="flex flex-wrap gap-3">
-              <span className="px-4 py-2 bg-gradient-to-r from-indigo-400 to-indigo-600 text-white rounded-full text-sm font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
-                🏓 Pickleball
-              </span>
-              <span className="px-4 py-2 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-full text-sm font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
-                🥏 Ultimate Frisbee
-              </span>
-              <span className="px-4 py-2 bg-gradient-to-r from-amber-400 to-amber-600 text-white rounded-full text-sm font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
-                ☕ Coffee
-              </span>
-              <span className="px-4 py-2 bg-gradient-to-r from-red-400 to-red-600 text-white rounded-full text-sm font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
-                🥊 Boxing
-              </span>
-              <span className="px-4 py-2 bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-full text-sm font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
-                📸 Photography
-              </span>
-            </div>
-          </div>
-
-          {/* Enhanced contact section */}
-          <div className="flex items-center gap-6 mt-auto">
-            <a href="mailto:raphaelkusuma5@gmail.com" className="group">
-              <Button className="bg-gradient-to-r from-slate-700 to-slate-900 hover:from-slate-800 hover:to-black text-white px-4 py-3 rounded-lg shadow-lg transform group-hover:scale-105 transition-all duration-200">
-                <span className="flex items-center gap-2">
-                  💬 Let&apos;s Connect
-                </span>
+          {/* Contact */}
+          <div className="flex items-center gap-4">
+            <a href="mailto:raphaelkusuma5@gmail.com">
+              <Button className="bg-gray-900 hover:bg-gray-800 text-white text-sm px-4 py-2 rounded-lg">
+                Let&apos;s Connect
               </Button>
             </a>
-            <div className="flex gap-3">
-              <div className="transform hover:scale-110 transition-transform duration-200">
-                <SocialIcon
-                  url="https://github.com/RaphaLK"
-                  bgColor="#333"
-                  style={{ height: 44, width: 44 }}
-                />
-              </div>
-              <div className="transform hover:scale-110 transition-transform duration-200">
-                <SocialIcon
-                  url="https://www.linkedin.com/in/raphaelkusuma/"
-                  style={{ height: 44, width: 44 }}
-                />
-              </div>
-            </div>
+            <SocialIcon url="https://github.com/RaphaLK" bgColor="#333" style={{ height: 38, width: 38 }} />
+            <SocialIcon url="https://www.linkedin.com/in/raphaelkusuma/" style={{ height: 38, width: 38 }} />
           </div>
         </div>
       </div>
 
-      {/* Current Project Highlight with enhanced styling */}
-      <div
-        className={`transition-all duration-700 delay-300 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <GlowingCard className="mb-12">
-          <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-10 rounded-xl shadow-2xl border border-slate-700 relative overflow-hidden">
-            {/* Animated background particles */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-10 left-10 w-2 h-2 bg-orange-400 rounded-full animate-ping"></div>
-              <div
-                className="absolute top-20 right-20 w-1 h-1 bg-blue-400 rounded-full animate-pulse"
-                style={{ animationDelay: "1s" }}
-              ></div>
-              <div
-                className="absolute bottom-20 left-1/3 w-1.5 h-1.5 bg-purple-400 rounded-full animate-ping"
-                style={{ animationDelay: "2s" }}
-              ></div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-8 relative z-10">
-              <div className="md:w-3/4">
-                <div className="flex items-center mb-6">
-                  <span className="text-3xl mr-4">⚡</span>
-                  <h2 className="text-3xl font-mono font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
-                    Current Focus: Systems Development
-                  </h2>
-                </div>
-                <p className="text-slate-300 mb-6 leading-relaxed text-lg">
-                  I&apos;m currently developing a operating system in{" "}
-                  <span className="text-orange-400 font-semibold">Rust</span>,
-                  based on Philip Opperman&apos;s blog. I&apos;m also
-                  strengthening my{" "}
-                  <span className="text-blue-400 font-semibold">C++</span>{" "}
-                  skills through system programming, for example, I&apos;m
-                  experimenting with Linux Kernel Development.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-purple-500 bg-opacity-20 text-purple-200 rounded-lg text-sm font-mono border border-purple-600 backdrop-blur-sm hover:bg-opacity-30 transition-all duration-200">
-                    🔧 Kernel Development
-                  </span>
-                  <span className="px-4 py-2 bg-blue-500 bg-opacity-20 text-blue-200 rounded-lg text-sm font-mono border border-blue-600 backdrop-blur-sm hover:bg-opacity-30 transition-all duration-200">
-                    🐧 Linux Systems
-                  </span>
-                </div>
-              </div>
-              <div className="md:w-1/4 flex flex-col items-center justify-center gap-6">
-                <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-full blur opacity-40 group-hover:opacity-70 transition duration-1000"></div>
-                  <div className="relative h-24 w-24 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-lg font-bold text-white">Rust</span>
-                  </div>
-                </div>
-                <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full blur opacity-40 group-hover:opacity-70 transition duration-1000"></div>
-                  <div className="relative h-24 w-24 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-lg font-bold text-white">C++</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>{" "}
-        </GlowingCard>
+      {/* Currently */}
+      <div className="border border-gray-200 rounded-xl p-8 mb-10">
+        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Currently</h2>
+        <div className="space-y-2">
+          <p className="text-gray-700 text-sm">Finishing my MS in Computer Science and Engineering at SCU.</p>
+          <p className="text-gray-700 text-sm">Preparing for my Software Engineering internship at Google (Chrome Remote Desktop team, Summer 2026).</p>
+          <p className="text-gray-700 text-sm">Working on systems projects: an OS in Rust (based on Philipp Oppermann&apos;s blog) and Linux Kernel development in C.</p>
+        </div>
       </div>
 
-      {/* Additional Highlights with enhanced cards */}
-      <div
-        className={`bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-2xl shadow-inner border border-slate-200 transition-all duration-700 delay-500 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <h2 className="text-3xl font-bold mb-8 text-slate-800 text-center">
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            🌟 Additional Highlights
-          </span>
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div
-            className={`transition-all duration-700 delay-700 ${
-              isLoaded ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <GlowingCard>
-              <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-100 h-full">
-                <div className="flex items-center mb-4">
-                  <span className="text-2xl mr-3">🎓</span>
-                  <h3 className="text-xl font-bold text-slate-800">
-                    Education
-                  </h3>
-                </div>
-                <div className="space-y-4">
-                  <div className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border-l-4 border-blue-500">
-                    <p className="font-semibold text-slate-800">
-                      M.S. Computer Science and Engineering
-                    </p>
-                    <p className="text-blue-700 font-medium">
-                      Santa Clara University
-                    </p>
-                    <p className="text-slate-600 text-sm">
-                      Still in HCI and EPIC Lab! Recreational Pickleball and a
-                      TA/Grader.
-                    </p>
-                    <div className="flex items-center mt-2">
-                      <span className="text-yellow-500 text-sm">⭐</span>
-                      <p className="text-slate-500 text-sm ml-1">
-                        GPA: 3.91/4.0
-                      </p>
-                    </div>
-                  </div>
-                  <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border-l-4 border-green-500">
-                    <p className="font-semibold text-slate-800">
-                      B.S. Computer Science and Engineering
-                    </p>
-                    <p className="text-green-700 font-medium">
-                      Santa Clara University
-                    </p>
-                    <p className="text-slate-600 text-sm">
-                      Awards: ICPC D2 - 4th in California (7th in the Pacific
-                      NW)
-                    </p>
-                    <p className="text-slate-600 text-sm">
-                      Involvements: SCU EPIC Lab, SCU HCI Lab, SCU Boxing
-                    </p>
-                    <div className="flex items-center mt-2">
-                      <span className="text-yellow-500 text-sm">⭐</span>
-                      <p className="text-slate-500 text-sm ml-1">
-                        GPA: ~3.5/4.0
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </GlowingCard>
+      {/* Highlights grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Education */}
+        <div className="border border-gray-100 rounded-xl p-6 shadow-sm border-t-4 border-t-blue-500">
+          <h3 className="font-semibold text-gray-900 mb-4">Education</h3>
+          <div className="space-y-4">
+            <div className="border-l-2 border-blue-500 pl-4">
+              <p className="font-medium text-gray-900 text-sm">M.S. Computer Science and Engineering</p>
+              <p className="text-blue-600 text-xs mt-0.5">Santa Clara University</p>
+              <p className="text-gray-400 text-xs mt-1">GPA: 3.91/4.0 · HCI Lab & EPIC Lab · TA/Grader</p>
+            </div>
+            <div className="border-l-2 border-emerald-500 pl-4">
+              <p className="font-medium text-gray-900 text-sm">B.S. Computer Science and Engineering</p>
+              <p className="text-emerald-600 text-xs mt-0.5">Santa Clara University</p>
+              <p className="text-gray-400 text-xs mt-1">GPA: ~3.5/4.0 · ICPC D2 — 4th in California</p>
+            </div>
           </div>
+        </div>
 
-          <div
-            className={`transition-all duration-700 delay-900 ${
-              isLoaded ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <GlowingCard>
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 h-full">
-                <div className="flex items-center mb-4">
-                  <span className="text-2xl mr-3">🤝</span>
-                  <h3 className="text-xl font-bold text-slate-800">
-                    Leadership & Teamwork
-                  </h3>
-                </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Experienced Resident Assistant, University Library Student
-                  Assistant. Got an award for{" "}
-                  <span className="font-bold">&quot;Most Caring&quot; </span>{" "}
-                  and
-                  <span className="font-bold">
-                    &quot; Most likely to know a resident&apos;s name&quot;{" "}
-                  </span>
-                  :)
-                  Also improved a good amount of days by listening to them at the Front Desk!
-                </p>
-                <div className="h-48 overflow-hidden rounded-lg relative group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <Image
-                    className="rounded-lg object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
-                    src={"/Assets/ImagesAbout/Teamwork/TeamPhoto.JPG"}
-                    alt={
-                      "Team photo showcasing leadership and collaboration skills"
-                    }
-                    height={300}
-                    width={300}
-                  />
-                </div>
-              </div>
-            </GlowingCard>
+        {/* Leadership */}
+        <div className="border border-gray-100 rounded-xl p-6 shadow-sm border-t-4 border-t-violet-500">
+          <h3 className="font-semibold text-gray-900 mb-3">Leadership & Teamwork</h3>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            Experienced Resident Assistant and Library Student Assistant. Awarded{" "}
+            <span className="font-medium text-gray-800">&quot;Most Caring&quot;</span> and{" "}
+            <span className="font-medium text-gray-800">&quot;Most likely to know a resident&apos;s name&quot;</span>.
+          </p>
+          <div className="h-40 overflow-hidden rounded-lg">
+            <Image
+              className="rounded-lg object-cover w-full h-full"
+              src="/Assets/ImagesAbout/Teamwork/TeamPhoto.JPG"
+              alt="Team photo"
+              height={300}
+              width={300}
+            />
           </div>
+        </div>
 
-          <div
-            className={`transition-all duration-700 delay-1100 ${
-              isLoaded ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <GlowingCard>
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 h-full">
-                <div className="flex items-center mb-4">
-                  <span className="text-2xl mr-3">📸</span>
-                  <h3 className="text-xl font-bold text-slate-800">
-                    Creative Photography
-                  </h3>
-                </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  As an RA, I had access to the residence hall&apos;s camera. I
-                  took professional headshots and macroshots of nature.
-                </p>
-                <div className="h-48 flex overflow-hidden rounded-lg justify-center">
-                  <div className="rounded-lg transform hover:scale-105 transition-transform duration-300">
-                    <Carousel1 />
-                  </div>
-                </div>
-              </div>
-            </GlowingCard>
+        {/* Photography */}
+        <div className="border border-gray-100 rounded-xl p-6 shadow-sm border-t-4 border-t-pink-500">
+          <h3 className="font-semibold text-gray-900 mb-3">Creative Photography</h3>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            As an RA, I had access to the residence hall&apos;s camera — shot professional headshots and macro photography.
+          </p>
+          <div className="h-40 overflow-hidden rounded-lg">
+            <Carousel1 />
           </div>
+        </div>
 
-          <div
-            className={`transition-all duration-700 delay-1300 ${
-              isLoaded ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <GlowingCard>
-              <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 h-full">
-                <div className="flex items-center mb-4">
-                  <span className="text-2xl mr-3">🏆</span>
-                  <h3 className="text-xl font-bold text-slate-800">
-                    Competitive Programming
-                  </h3>
-                </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Attended ICPC Division 2 representing Santa Clara University,
-                  achieved{" "}
-                  <span className="font-semibold text-orange-600">
-                    #4 in California
-                  </span>
-                  .
-                </p>
-                <div className="h-48 rounded-lg overflow-hidden relative group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <Image
-                    className="rounded-lg h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-                    src={"/Assets/ICPC/ICPC1.jpg"}
-                    alt={"ICPC Competition - 4th place in California"}
-                    height={300}
-                    width={300}
-                  />
-                </div>
-              </div>
-            </GlowingCard>
+        {/* Competitive Programming */}
+        <div className="border border-gray-100 rounded-xl p-6 shadow-sm border-t-4 border-t-orange-500">
+          <h3 className="font-semibold text-gray-900 mb-3">Competitive Programming</h3>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            Attended ICPC Division 2 representing Santa Clara University, achieving{" "}
+            <span className="font-medium text-orange-600">#4 in California</span> (7th in the Pacific NW).
+          </p>
+          <div className="h-40 overflow-hidden rounded-lg">
+            <Image
+              className="rounded-lg h-full w-full object-cover"
+              src="/Assets/ICPC/ICPC1.jpg"
+              alt="ICPC Competition"
+              height={300}
+              width={300}
+            />
           </div>
         </div>
       </div>
