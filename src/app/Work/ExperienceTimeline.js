@@ -184,7 +184,7 @@ const ExperienceTimeline = () => {
     <div className="flex flex-col items-center mt-2 w-full max-w-5xl px-4 relative">
       {/* Header */}
       <div className="relative mb-8 w-full">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 rounded-lg blur-md opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 rounded-lg opacity-10"></div>
         <h2 className="relative text-4xl font-bold text-center bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 bg-clip-text text-transparent py-4">
           Work Experience
         </h2>
@@ -257,24 +257,15 @@ const ExperienceTimeline = () => {
               >
                 {/* Google highlight ring */}
                 {exp.isHighlighted && (
-                  <>
-                    <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-red-500 via-yellow-500 to-green-500 rounded-xl blur-lg opacity-20"></div>
-                    <div className="absolute -top-6 -right-2 text-3xl">⭐</div>
-                  </>
+                  <div className="absolute -top-6 -right-2 text-3xl">⭐</div>
                 )}
-
-                {/* Hover glow */}
-                <div
-                  className={`absolute -inset-1 bg-gradient-to-r ${gradient} rounded-xl blur-sm
-                  opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
-                ></div>
 
                 {/* Card */}
                 <div
-                  className={`relative p-6 rounded-xl border-l-4 bg-white/95 backdrop-blur-sm
+                  className={`relative p-6 rounded-xl border-l-4 bg-white
                   shadow-lg transition-shadow duration-300 group-hover:shadow-2xl
                   ${isHovered ? "border-l-8" : ""}
-                  ${exp.isHighlighted ? "border-l-8 shadow-xl ring-2 ring-blue-400/50" : ""}`}
+                  ${exp.isHighlighted ? "border-l-8 shadow-xl ring-2 ring-blue-300" : ""}`}
                 >
                   {/* Header */}
                   <div className="flex flex-col md:flex-row justify-between mb-4">

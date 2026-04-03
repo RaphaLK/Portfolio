@@ -65,7 +65,7 @@ export default function Work() {
           </div>
         </div>
 
-        <div className="mt-8 p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200 mx-4">
+        <div className="mt-8 p-6 bg-white rounded-xl shadow-lg border border-gray-200 mx-4">
           <ExperienceTimeline />
         </div>
       </div>
