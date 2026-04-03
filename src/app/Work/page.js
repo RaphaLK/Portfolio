@@ -4,30 +4,26 @@ import ExperienceTimeline from "./ExperienceTimeline";
 export default function Work() {
   return (
     <div
-      className="flex flex-col w-full items-center font-[family-name:var(--font-geist-sans)] 
+      className="flex flex-col w-full items-center font-[family-name:var(--font-geist-sans)]
       bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 min-h-screen pb-20 relative overflow-hidden"
     >
-      {/* Animated background elements */}
+      {/* Background decorative elements — using animate-pulse instead of animate-ping (cheaper) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-5 animate-float"></div>
         <div
-          className="absolute top-60 right-20 w-24 h-24 bg-gradient-to-r from-green-400 to-teal-400 rounded-full opacity-5 animate-bounce"
+          className="absolute top-60 right-20 w-24 h-24 bg-gradient-to-r from-green-400 to-teal-400 rounded-full opacity-5 animate-pulse"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
           className="absolute bottom-40 left-1/4 w-20 h-20 bg-gradient-to-r from-pink-400 to-red-400 rounded-full opacity-5 animate-pulse"
           style={{ animationDelay: "2s" }}
         ></div>
-        <div
-          className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full opacity-5 animate-ping"
-          style={{ animationDelay: "3s" }}
-        ></div>
       </div>
 
-      {/* Enhanced terminal header */}
+      {/* Terminal header */}
       <div className="w-full max-w-6xl relative">
         <div className="mb-2 p-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white rounded-b-2xl shadow-2xl border border-gray-700 relative overflow-hidden">
-          {/* Terminal background pattern */}
+          {/* Dot grid pattern */}
           <div className="absolute inset-0 opacity-5">
             <div
               className="absolute inset-0"
@@ -64,10 +60,11 @@ export default function Work() {
             <span className="text-blue-400">raphael@portfolio</span>
             <span className="text-white">:</span>
             <span className="text-purple-400">~/experience-timeline $</span>
-            <span className="ml-2 animate-pulse">cat experience.log</span>
-            <span className="ml-1 animate-ping">|</span>
+            <span className="ml-2">cat experience.log</span>
+            <span className="ml-1 animate-pulse">|</span>
           </div>
         </div>
+
         <div className="mt-8 p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200 mx-4">
           <ExperienceTimeline />
         </div>
