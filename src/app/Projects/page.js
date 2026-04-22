@@ -11,6 +11,24 @@ export default function Projects() {
   }, []);
 
   const projects = [
+           {
+      title: "Mini-Tmux (WIP)",
+      description: "C++, Termios, CMake",
+      info: "My own experimental implementation of a shell with persistence. I made this to experiment with PTYs and explore POSIX APIs.",
+      githubLink: "https://github.com/RaphaLK/Mini-Tmux",
+    },
+        {
+      title: "OpenEducation",
+      description: "Supabase, JavaScript, Next.js, VLLM, Qwen2.5",
+      info: "AI powered tutoring webapp. Uses LLM outputs to customize lesson plans in different languages.",
+      githubLink: "https://github.com/Hstrauss1/SmilingUnicorn",
+    },
+        {
+      title: "FocusFlow (WIP)",
+      description: "Flutter, Firebase",
+      info: "Developed a Flutter pomodoro app. Designed the app via Figma, for coursework.",
+      githubLink: "https://github.com/RaphaLK/Netfilter-Packet-Sniffer",
+    },
     {
       title: "Netfilter Packet Sniffer",
       description: "C, Netfilter, QEMU, Kernel Development",
@@ -122,7 +140,7 @@ export default function Projects() {
   function getProjectCategory(description) {
     const desc = description.toLowerCase();
     if (desc.includes('c++') || desc.includes('rust') || desc.includes('os development') || desc.includes('kernel') ||
-        desc.includes('assembly') || desc.includes('verilog') || desc.includes('llvm')) {
+        desc.includes('assembly') || desc.includes('verilog') || desc.includes('llvm') || desc.includes('netfilter')) {
       return 'systems';
     } else if (desc.includes('react native') || desc.includes('flutter') || desc.includes('expo')) {
       return 'mobile';

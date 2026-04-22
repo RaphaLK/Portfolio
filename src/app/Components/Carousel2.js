@@ -12,7 +12,7 @@ import React from "react";
 // Teamwork
 const Carousel2 = () => {
   return (
-    <Carousel className="w-full max-w-64 flex mt-4 max-h-48 ml-20">
+    <Carousel className="w-full max-w-64 flex mt-4 max-h-64 ml-20">
       <CarouselContent className="rounded-md">
         <CarouselItem>
           <Card>

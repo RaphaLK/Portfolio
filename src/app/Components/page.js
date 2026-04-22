@@ -6,9 +6,9 @@ import Carousel1 from "./Carousel1";
 import FloatingCube3D from "./FloatingCube3D";
 
 const SKILLS = {
-  Languages: { items: ["C++", "C", "Rust", "Java", "Python", "Bash", "JavaScript", "TypeScript", "SQL"], color: "text-blue-600" },
-  "Tools & DevOps": { items: ["CMake", "gdb", "Linux", "Git", "Docker", "GCP", "Firebase", "Jenkins"], color: "text-emerald-600" },
-  "Frameworks": { items: ["Qt", "React", "React Native", "Next.js", "Node.js", "Express.js", "Flask"], color: "text-violet-600" },
+  Languages: { items: ["C++", "C", "Rust", "Java", "Python", "Bash", "JavaScript", "TypeScript", "SQL"], color: "text-blue-600", pillClass: "bg-blue-50 text-blue-700 border-blue-200" },
+  "Tools & DevOps": { items: ["CMake", "gdb", "Linux", "Git", "Docker", "GCP", "Firebase", "Jenkins"], color: "text-emerald-600", pillClass: "bg-emerald-50 text-emerald-700 border-emerald-200" },
+  "Frameworks": { items: ["Qt", "React", "React Native", "Next.js", "Node.js", "Express.js", "Flask"], color: "text-violet-600", pillClass: "bg-violet-50 text-violet-700 border-violet-200" },
 };
 
 const INTERESTS = ["Pickleball", "Ultimate Frisbee", "Coffee", "Boxing", "Photography"];
@@ -39,14 +39,14 @@ export default function AboutMe() {
 
           {/* Skills */}
           <div className="space-y-4">
-            {Object.entries(SKILLS).map(([category, { items, color }]) => (
+            {Object.entries(SKILLS).map(([category, { items, color, pillClass }]) => (
               <div key={category}>
                 <p className={`text-xs font-semibold uppercase tracking-wider mb-2 ${color}`}>{category}</p>
                 <div className="flex flex-wrap gap-2">
                   {items.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded text-xs font-mono border border-gray-200"
+                      className={`px-3 py-1 rounded text-xs font-mono border ${pillClass}`}
                     >
                       {skill}
                     </span>
@@ -85,12 +85,11 @@ export default function AboutMe() {
       </div>
 
       {/* Currently */}
-      <div className="border border-gray-200 rounded-xl p-8 mb-10">
-        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Currently</h2>
+      <div className="border border-gray-200 rounded-xl p-8 mb-10 border-t-4 border-t-sky-500 bg-sky-50/30">
+        <h2 className="text-sm font-semibold text-sky-500 uppercase tracking-wider mb-4">Currently</h2>
         <div className="space-y-2">
-          <p className="text-gray-700 text-sm">Finishing my MS in Computer Science and Engineering at SCU.</p>
+          <p className="text-gray-700 text-sm">Finishing my MS in Computer Science and Engineering at SCU (December 2026).</p>
           <p className="text-gray-700 text-sm">Preparing for my Software Engineering internship at Google (Chrome Remote Desktop team, Summer 2026).</p>
-          <p className="text-gray-700 text-sm">Working on systems projects: an OS in Rust (based on Philipp Oppermann&apos;s blog) and Linux Kernel development in C.</p>
         </div>
       </div>
 
@@ -103,7 +102,7 @@ export default function AboutMe() {
             <div className="border-l-2 border-blue-500 pl-4">
               <p className="font-medium text-gray-900 text-sm">M.S. Computer Science and Engineering</p>
               <p className="text-blue-600 text-xs mt-0.5">Santa Clara University</p>
-              <p className="text-gray-400 text-xs mt-1">GPA: 3.91/4.0 · HCI Lab & EPIC Lab · TA/Grader</p>
+              <p className="text-gray-400 text-xs mt-1">GPA: 3.903/4.0 · HCI Lab & EPIC Lab · TA/Grader</p>
             </div>
             <div className="border-l-2 border-emerald-500 pl-4">
               <p className="font-medium text-gray-900 text-sm">B.S. Computer Science and Engineering</p>
@@ -136,7 +135,7 @@ export default function AboutMe() {
         <div className="border border-gray-100 rounded-xl p-6 shadow-sm border-t-4 border-t-pink-500">
           <h3 className="font-semibold text-gray-900 mb-3">Creative Photography</h3>
           <p className="text-gray-600 text-sm leading-relaxed mb-4">
-            As an RA, I had access to the residence hall&apos;s camera — shot professional headshots and macro photography.
+            As an RA, I had access to the residence hall&apos;s camera. Here&apos;s a small set of what I took.
           </p>
           <div className="h-40 overflow-hidden rounded-lg">
             <Carousel1 />
