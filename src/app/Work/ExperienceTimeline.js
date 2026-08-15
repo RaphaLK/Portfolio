@@ -33,10 +33,13 @@ const getCompanyLogo = (title) => {
 const experiences = [
   {
     title: "Google - Software Engineering Intern",
-    year: "Upcoming Summer 2026",
+    year: "Summer 2026 - Present",
     location: "Kirkland, WA",
     isHighlighted: true,
-    details: ["Excited to join Google's Chrome Remote Desktop team!"],
+    details: [
+      "Excited to join Google's Chrome Remote Desktop team!",
+      "Implemented a web terminal emulator for internal Linux virtual machines on Chrome Remote Desktop.",
+    ],
   },
   {
     title: "EPIC Lab - Full Stack Mobile Developer (GoodBuys)",
@@ -217,7 +220,7 @@ const ExperienceTimeline = () => {
                         </h3>
                         {exp.isHighlighted && (
                           <span className="text-xs font-medium text-blue-600 border border-blue-200 rounded px-1.5 py-0.5 leading-none">
-                            Upcoming
+                            Current
                           </span>
                         )}
                       </div>
