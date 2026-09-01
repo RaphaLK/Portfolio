@@ -33,12 +33,11 @@ const getCompanyLogo = (title) => {
 const experiences = [
   {
     title: "Google - Software Engineering Intern",
-    year: "Summer 2026 - Present",
+    year: "June 2026 - September 2026",
     location: "Kirkland, WA",
     isHighlighted: true,
     details: [
-      "Excited to join Google's Chrome Remote Desktop team!",
-      "Implemented a web terminal emulator for internal Linux virtual machines on Chrome Remote Desktop.",
+      "Implemented a standalone web terminal for Chrome Remote Desktop."
     ],
   },
   {
