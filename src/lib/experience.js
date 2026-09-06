@@ -35,19 +35,21 @@ export const EXPERIENCES = [
     location: "Kirkland, WA",
     isHighlighted: true,
     details: [
-      "Implemented a standalone web terminal for Chrome Remote Desktop.",
+      "Implemented a standalone companion web terminal for Chrome Remote Desktop.",
+      "Reduced bandwidth requirement for agentic CLI tool usage from 0.2-3 Mbps to 0.1-2 Kbps.",
+      "Code fragments are in Chromium & Google3."
     ],
   },
   {
     title: "EPIC Lab - Full Stack Mobile Developer (GoodBuys)",
-    year: "May 2023 - Present",
+    year: "May 2025 - June 2026",
     location: "Santa Clara, CA",
     details: [
       "Built a React Native mobile app to trace the ethical labels of brands.",
     ],
   },
   {
-    title: "SCU School of Engineering - Grader",
+    title: "SCU School of Engineering - Grader & Teaching Assistant",
     year: "Sept. 2025 - Present",
     location: "Santa Clara, CA",
     details: [
@@ -58,7 +60,7 @@ export const EXPERIENCES = [
   },
   {
     title: "HCI Lab - Full Stack Developer (SMAR)",
-    year: "April 2025 - Present",
+    year: "April 2025 - June 2026",
     location: "Santa Clara, CA",
     details: [
       "Contributed and maintained a React Webapp that allows non-technical researchers to systematically scrape and analyze information of mobile applications on the Google Play Store and the App Store.",
@@ -68,7 +70,7 @@ export const EXPERIENCES = [
   },
   {
     title: "EPIC Lab - Full Stack Developer & Team Lead (PTHub)",
-    year: "May 2023 - Present",
+    year: "May 2023 - June 2026",
     location: "Santa Clara, CA",
     details: [
       "Acted as the lead for the mobile development team, spearheading development for an experimental method for encouraging public transportation.",

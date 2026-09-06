@@ -14,10 +14,11 @@ const VoxelCatScene = dynamic(() => import("./voxel-cat-scene"), {
   loading: () => skeleton,
 });
 
+/** Fills its parent — the caller controls the height. */
 export default function FloatingCube3D({ className = "" }) {
   return (
     <div
-      className={`relative h-72 w-full overflow-hidden rounded-xl border border-line bg-bg-subtle ${className}`}
+      className={`relative h-full min-h-[18rem] w-full overflow-hidden rounded-xl border border-line bg-bg-subtle/60 ${className}`}
     >
       <VoxelCatScene fallback={skeleton} />
       <span className="pointer-events-none absolute bottom-2 left-3 font-mono text-[10px] uppercase tracking-widest text-ink-faint">

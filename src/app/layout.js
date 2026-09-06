@@ -1,5 +1,6 @@
 import "./globals.css";
 import { geistSans, geistMono, spaceGrotesk } from "./fonts";
+import Backdrop from "@/components/site/Backdrop";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 
@@ -71,7 +72,8 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable}`}
     >
       <body className="font-sans antialiased">
-        <div className="flex min-h-screen flex-col">
+        <Backdrop />
+        <div className="relative flex min-h-screen flex-col">
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
