@@ -16,8 +16,7 @@ export default function Hero() {
           </h1>
           <p className="max-w-xl text-base leading-relaxed text-ink-muted">
             M.S. Computer Science &amp; Engineering at Santa Clara University.
-            Currently interning at Google on Chrome Remote Desktop. I like
-            systems programming, compilers, and building things end to end.
+            Currently interning at Google on Chrome Remote Desktop.
           </p>
         </div>
 
