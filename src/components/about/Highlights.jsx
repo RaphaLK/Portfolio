@@ -1,19 +1,33 @@
+"use client";
 import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/Reveal";
 import Carousel1 from "@/components/Carousel1";
+import { useTilt } from "@/lib/useTilt";
 
 function Panel({ label, title, children, media }) {
+  const { ref, onMouseMove, onMouseLeave } = useTilt();
   return (
-    <div className="flex h-full flex-col rounded-xl border border-line bg-surface p-6">
-      <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-brand">
-        {label}
-      </p>
-      <h3 className="mt-2 text-base font-semibold">{title}</h3>
-      <div className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
-        {children}
+    <div
+      ref={ref}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+      className="tilt-card relative flex h-full flex-col rounded-xl border border-line bg-surface p-6"
+    >
+      <div
+        className="tilt-spotlight pointer-events-none absolute inset-0 rounded-[inherit]"
+        aria-hidden="true"
+      />
+      <div className="relative z-10 flex h-full flex-col">
+        <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-brand">
+          {label}
+        </p>
+        <h3 className="mt-2 text-base font-semibold">{title}</h3>
+        <div className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
+          {children}
+        </div>
+        {media && <div className="mt-4">{media}</div>}
       </div>
-      {media && <div className="mt-4">{media}</div>}
     </div>
   );
 }

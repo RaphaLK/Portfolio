@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import MagneticLink from "@/components/MagneticLink";
 
 const SOCIALS = [
   { href: "https://github.com/RaphaLK", label: "GitHub", Icon: Github },
@@ -20,16 +21,17 @@ export default function Footer() {
         </p>
         <div className="flex items-center gap-1">
           {SOCIALS.map(({ href, label, Icon }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith("http") ? "_blank" : undefined}
-              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-              aria-label={label}
-              className="grid h-9 w-9 place-items-center rounded-md text-ink-faint transition-colors hover:bg-surface hover:text-ink"
-            >
-              <Icon className="h-4 w-4" />
-            </a>
+            <MagneticLink key={label}>
+              <a
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                aria-label={label}
+                className="grid h-9 w-9 place-items-center rounded-md text-ink-faint transition-colors hover:bg-surface hover:text-ink"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            </MagneticLink>
           ))}
         </div>
       </div>

@@ -3,6 +3,7 @@ import { geistSans, geistMono, spaceGrotesk } from "./fonts";
 import Backdrop from "@/components/site/Backdrop";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
+import CommandPalette from "@/components/site/CommandPalette";
 
 const SITE_URL = "https://raphaelkusuma.me";
 
@@ -73,6 +74,7 @@ export default function RootLayout({ children }) {
     >
       <body className="font-sans antialiased">
         <Backdrop />
+        <CommandPalette />
         <div className="relative flex min-h-screen flex-col">
           <Navbar />
           <main className="flex-1">{children}</main>

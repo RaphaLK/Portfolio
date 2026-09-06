@@ -1,39 +1,50 @@
 "use client";
 import Reveal from "@/components/Reveal";
 import { MAIN_EXPERIENCES, EARLIER_EXPERIENCES } from "@/lib/experience";
+import { useTilt } from "@/lib/useTilt";
 
 function TimelineCard({ exp, index }) {
+  const { ref, onMouseMove, onMouseLeave } = useTilt();
   return (
     <li>
       <Reveal className="relative pl-8" delay={Math.min(index, 6) * 40}>
         <span className="absolute left-0 top-[18px] h-[13px] w-[13px] rounded-full border-2 border-bg bg-brand" />
         <div
-          className={`rounded-xl border bg-surface p-5 transition-colors hover:border-line-strong ${
+          ref={ref}
+          onMouseMove={onMouseMove}
+          onMouseLeave={onMouseLeave}
+          className={`tilt-card relative rounded-xl border bg-surface p-5 transition-colors hover:border-line-strong ${
             exp.isHighlighted ? "border-brand/40" : "border-line"
           }`}
         >
-          <div className="flex flex-wrap items-center gap-2">
-            <h3 className="text-sm font-semibold leading-snug">{exp.title}</h3>
-            {exp.isHighlighted && (
-              <span className="rounded border border-brand/40 px-1.5 py-0.5 font-mono text-[10px] uppercase leading-none text-brand">
-                current
-              </span>
-            )}
-          </div>
-          <p className="mt-1 font-mono text-xs text-ink-faint">
-            {exp.year} · {exp.location}
-          </p>
-
-          <ul className="mt-3 space-y-1.5">
-            {exp.details.map((detail) => (
-              <li key={detail} className="flex gap-2">
-                <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-brand" />
-                <span className="text-sm leading-relaxed text-ink-muted">
-                  {detail}
+          <div
+            className="tilt-spotlight pointer-events-none absolute inset-0 rounded-[inherit]"
+            aria-hidden="true"
+          />
+          <div className="relative z-10">
+            <div className="flex flex-wrap items-center gap-2">
+              <h3 className="text-sm font-semibold leading-snug">{exp.title}</h3>
+              {exp.isHighlighted && (
+                <span className="rounded border border-brand/40 px-1.5 py-0.5 font-mono text-[10px] uppercase leading-none text-brand">
+                  current
                 </span>
-              </li>
-            ))}
-          </ul>
+              )}
+            </div>
+            <p className="mt-1 font-mono text-xs text-ink-faint">
+              {exp.year} · {exp.location}
+            </p>
+
+            <ul className="mt-3 space-y-1.5">
+              {exp.details.map((detail) => (
+                <li key={detail} className="flex gap-2">
+                  <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-brand" />
+                  <span className="text-sm leading-relaxed text-ink-muted">
+                    {detail}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Reveal>
     </li>

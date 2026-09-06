@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { OPEN_EVENT } from "@/components/site/CommandPalette";
 
 const LINKS = [
   { href: "/", label: "About" },
@@ -43,34 +44,44 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <ul className="flex items-center gap-1 sm:gap-2">
-          {LINKS.map((link) => {
-            const active =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.href);
-            return (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "relative block px-3 py-2 font-mono text-sm transition-colors",
-                    active ? "text-ink" : "text-ink-faint hover:text-ink-muted"
-                  )}
-                >
-                  {link.label}
-                  <span
+        <div className="flex items-center gap-1 sm:gap-2">
+          <ul className="flex items-center gap-1 sm:gap-2">
+            {LINKS.map((link) => {
+              const active =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
                     className={cn(
-                      "absolute inset-x-3 -bottom-px h-px transition-colors",
-                      active ? "bg-brand" : "bg-transparent"
+                      "relative block px-3 py-2 font-mono text-sm transition-colors",
+                      active ? "text-ink" : "text-ink-faint hover:text-ink-muted"
                     )}
-                  />
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+                  >
+                    {link.label}
+                    <span
+                      className={cn(
+                        "absolute inset-x-3 -bottom-px h-px transition-colors",
+                        active ? "bg-brand" : "bg-transparent"
+                      )}
+                    />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event(OPEN_EVENT))}
+            className="ml-1 hidden items-center gap-1 rounded-md border border-line px-2 py-1 font-mono text-xs text-ink-faint transition-colors hover:border-line-strong hover:text-ink-muted sm:flex"
+            aria-label="Open command palette"
+          >
+            <kbd className="font-mono">⌘K</kbd>
+          </button>
+        </div>
       </nav>
     </header>
   );

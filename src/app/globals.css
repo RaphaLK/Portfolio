@@ -155,16 +155,8 @@
 }
 
 /* -------------------------------------------------- ambient backdrop layer */
-.backdrop-grid {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(
-    circle at center,
-    var(--color-line-strong) 1px,
-    transparent 1.6px
-  );
-  background-size: 30px 30px;
-  opacity: 0.3;
+.backdrop-grid-canvas {
+  opacity: 0.85;
   -webkit-mask-image: radial-gradient(
     ellipse 90% 55% at 50% 0%,
     #000 12%,
@@ -233,6 +225,28 @@
   to {
     transform: translate3d(6%, -4%, 0) scale(0.9);
   }
+}
+
+/* -------------------------------------------------- tilt + spotlight cards */
+.tilt-card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --spot-x: 50%;
+  --spot-y: 50%;
+  --spot-opacity: 0;
+  transform: perspective(800px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transition: transform 0.2s var(--ease-out-expo);
+  will-change: transform;
+}
+
+.tilt-spotlight {
+  background: radial-gradient(
+    circle 220px at var(--spot-x) var(--spot-y),
+    var(--color-brand-tint),
+    transparent 70%
+  );
+  opacity: var(--spot-opacity);
+  transition: opacity 0.25s ease-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
