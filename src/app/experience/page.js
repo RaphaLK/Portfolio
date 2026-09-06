@@ -2,9 +2,13 @@ import TerminalFrame from "@/components/site/TerminalFrame";
 import ExperienceTimeline from "./ExperienceTimeline";
 import { EXPERIENCES } from "@/lib/experience";
 
-export const metadata = { title: "Experience" };
+export const metadata = {
+  title: "Experience",
+  description:
+    "Software engineering and research roles — Google, Anritsu, and Santa Clara University labs.",
+};
 
-export default function Work() {
+export default function Experience() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-14 sm:px-6 sm:py-20">
       <TerminalFrame

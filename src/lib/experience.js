@@ -1,33 +1,8 @@
-export function getCompanyLogo(title) {
-  if (title.includes("Google")) return "/Assets/Google.png";
-  if (
-    title.includes("Grader") ||
-    title.includes("Library") ||
-    title.includes("Advisor")
-  )
-    return "/Assets/Santa_Clara_U_Seal.png";
-  if (title.includes("HCI Lab") || title.includes("SMAR"))
-    return "/Assets/SCU_HCI.jpeg";
-  if (title.includes("EPIC Lab") || title.includes("PTHub"))
-    return "/Assets/EPIC_Lab.png";
-  if (title.includes("Anritsu")) return "/Assets/Anritsu.png";
-  return null;
-}
-
-export const COMMIT_HASHES = [
-  "a3f2c1d",
-  "b7e4a9c",
-  "c1d5f3b",
-  "d8a2e6f",
-  "e5c3b9a",
-  "f2d7e1c",
-  "a4b8c3f",
-  "1e6d2b9",
-  "7f3c5a1",
-  "2a8e4d6",
-  "9b1f7c3",
-];
-
+/**
+ * Roles in reverse-chronological order. `isHighlighted` marks the current
+ * headline role; `earlier` drops a role into the compact "earlier" group
+ * (older / non-engineering work that shouldn't compete with the SWE roles).
+ */
 export const EXPERIENCES = [
   {
     title: "Google - Software Engineering Intern",
@@ -37,7 +12,7 @@ export const EXPERIENCES = [
     details: [
       "Implemented a standalone companion web terminal for Chrome Remote Desktop.",
       "Reduced bandwidth requirement for agentic CLI tool usage from 0.2-3 Mbps to 0.1-2 Kbps.",
-      "Code fragments are in Chromium & Google3."
+      "Code fragments are in Chromium & Google3.",
     ],
   },
   {
@@ -116,6 +91,7 @@ export const EXPERIENCES = [
     title: "University Library Student Assistant",
     year: "Apr. 2022 - Jun. 2025",
     location: "Santa Clara, CA",
+    earlier: true,
     details: [
       "Audited archival materials and moved current materials into the archive.",
       "Reshelved books and maintained proper organization within the library's offerings.",
@@ -126,6 +102,7 @@ export const EXPERIENCES = [
     title: "Musical Streaming Operator",
     year: "2021",
     location: "Jakarta, Indonesia",
+    earlier: true,
     details: [
       "Handled YouTube streaming for an online musical.",
       "Managed timing of technical effects.",
@@ -135,6 +112,7 @@ export const EXPERIENCES = [
     title: "Springfield Cup Head of Logistics",
     year: "2020 - 2021",
     location: "Jakarta, Indonesia",
+    earlier: true,
     details: [
       "Led a team of 6 to handle logistics for a city-wide high school event.",
       "Managed budget, staff meals, and event materials requests.",
@@ -142,3 +120,9 @@ export const EXPERIENCES = [
     ],
   },
 ];
+
+export const MAIN_EXPERIENCES = EXPERIENCES.filter((e) => !e.earlier);
+export const EARLIER_EXPERIENCES = EXPERIENCES.filter((e) => e.earlier);
+
+/** First few roles, for the home-page preview. */
+export const RECENT_EXPERIENCES = MAIN_EXPERIENCES.slice(0, 3);

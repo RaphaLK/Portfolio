@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import Reveal from "@/components/Reveal";
 import { cn } from "@/lib/utils";
-import { PROJECTS, CATEGORIES, getProjectCategory } from "@/lib/projects";
+import { PROJECTS, CATEGORIES } from "@/lib/projects";
 
 export default function Projects() {
   const [filter, setFilter] = useState("all");
@@ -12,7 +12,7 @@ export default function Projects() {
     () =>
       filter === "all"
         ? PROJECTS
-        : PROJECTS.filter((p) => getProjectCategory(p.description) === filter),
+        : PROJECTS.filter((p) => p.category === filter),
     [filter]
   );
 
@@ -20,7 +20,7 @@ export default function Projects() {
     <div className="mx-auto max-w-5xl px-5 py-14 sm:px-6 sm:py-20">
       <header className="max-w-2xl">
         <p className="mb-2 font-mono text-xs uppercase tracking-[0.16em] text-ink-faint">
-          ~/projects — {PROJECTS.length} repos
+          ~/projects — {PROJECTS.length} builds
         </p>
         <h1 className="text-[clamp(2rem,5vw,2.75rem)] leading-tight">Projects</h1>
         <p className="mt-3 text-sm leading-relaxed text-ink-muted">

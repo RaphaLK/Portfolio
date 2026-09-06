@@ -1,26 +1,35 @@
 import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
 import Tag from "@/components/ui/Tag";
-import { getProjectCategory, CATEGORY_LABELS } from "@/lib/projects";
+import { CATEGORY_LABELS } from "@/lib/projects";
 
 const MAX_TAGS = 5;
 
 export default function ProjectCard({
   title,
+  category,
   description,
   info,
+  year,
+  wip,
+  featured,
   githubLink,
   projectLink,
 }) {
   const tech = description.split(",").map((t) => t.trim());
-  const category = getProjectCategory(description);
   const primaryLink = githubLink || projectLink;
 
   return (
-    <article className="group flex h-full flex-col rounded-xl border border-line bg-surface p-5 transition-colors hover:border-line-strong">
+    <article
+      className={`group flex h-full flex-col rounded-xl border bg-surface p-5 transition-colors hover:border-line-strong ${
+        featured ? "border-brand/25" : "border-line"
+      }`}
+    >
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">
-            {CATEGORY_LABELS[category]}
+          <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+            <span>{CATEGORY_LABELS[category]}</span>
+            {year && <span className="text-line-strong">· {year}</span>}
+            {wip && <span className="text-brand">· wip</span>}
           </p>
           <h3 className="mt-1 text-base font-semibold leading-snug">{title}</h3>
         </div>
