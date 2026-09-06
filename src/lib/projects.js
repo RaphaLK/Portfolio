@@ -28,21 +28,6 @@ export const PROJECTS = [
     githubLink: "https://github.com/RaphaLK/MiniRustOS",
   },
   {
-    title: "Simple C Compiler",
-    category: "systems",
-    featured: true,
-    description: "C++, Flex, x86-64 Assembly",
-    info: "Built a compiler for a subset of C under Dr. Darren Atkinson. Implemented lexical analysis with Flex, syntax parsing with recursive descent, semantic analysis with symbol tables, type checking, and x86-64 code generation. Supports variables, functions, control structures, and basic error handling.",
-  },
-  {
-    title: "NextGig",
-    category: "systems",
-    featured: true,
-    description: "C++17, Qt, Firebase SDK, TCP/IP, CMake, JSON",
-    info: "Built a freelancer job portal using C++ and the Qt framework, demonstrating SOLID principles and design patterns like Observer and Singletons. Implemented a client-server architecture with JSON-based RPC protocol and Firebase C++ SDK integration for user authentication and data persistence.",
-    githubLink: "https://github.com/RaphaLK/NextGig",
-  },
-  {
     title: "Vocal sEMG Translation System",
     category: "ml",
     featured: true,
@@ -60,6 +45,21 @@ export const PROJECTS = [
       "React Native, Expo, JavaScript, Python, Flask, MySQL, cPanel, Firebase",
     info: "Full Stack Mobile and Web Application. Main goal of assessing demand of public transportation at SCU. I currently act as the team lead for the Mobile App team, in addition to one of the core maintainers for the Backend repo. I handle Mobile App development, Backend Development, and DevOps. Created new designs and developed multiple features in the mobile app. Developed Web Scrapers, Rest APIs, and Database Automation Scripts.",
     projectLink: "https://publictransithub.com",
+  },
+  {
+    title: "Simple C Compiler",
+    category: "systems",
+    featured: true,
+    description: "C++, Flex, x86-64 Assembly",
+    info: "Built a compiler for a subset of C under Dr. Darren Atkinson. Implemented lexical analysis with Flex, syntax parsing with recursive descent, semantic analysis with symbol tables, type checking, and x86-64 code generation. Supports variables, functions, control structures, and basic error handling.",
+  },
+  {
+    title: "NextGig",
+    category: "systems",
+    featured: true,
+    description: "C++17, Qt, Firebase SDK, TCP/IP, CMake, JSON",
+    info: "Built a freelancer job portal using C++ and the Qt framework, demonstrating SOLID principles and design patterns like Observer and Singletons. Implemented a client-server architecture with JSON-based RPC protocol and Firebase C++ SDK integration for user authentication and data persistence.",
+    githubLink: "https://github.com/RaphaLK/NextGig",
   },
   {
     title: "SCU ISA CPU Design",
