@@ -5,13 +5,13 @@ export default function sitemap() {
   return [
     { url: baseUrl, lastModified: now, changeFrequency: "monthly", priority: 1 },
     {
-      url: `${baseUrl}/Projects`,
+      url: `${baseUrl}/projects`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/Work`,
+      url: `${baseUrl}/experience`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,

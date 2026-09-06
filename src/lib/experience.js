@@ -1,33 +1,8 @@
-export function getCompanyLogo(title) {
-  if (title.includes("Google")) return "/Assets/Google.png";
-  if (
-    title.includes("Grader") ||
-    title.includes("Library") ||
-    title.includes("Advisor")
-  )
-    return "/Assets/Santa_Clara_U_Seal.png";
-  if (title.includes("HCI Lab") || title.includes("SMAR"))
-    return "/Assets/SCU_HCI.jpeg";
-  if (title.includes("EPIC Lab") || title.includes("PTHub"))
-    return "/Assets/EPIC_Lab.png";
-  if (title.includes("Anritsu")) return "/Assets/Anritsu.png";
-  return null;
-}
-
-export const COMMIT_HASHES = [
-  "a3f2c1d",
-  "b7e4a9c",
-  "c1d5f3b",
-  "d8a2e6f",
-  "e5c3b9a",
-  "f2d7e1c",
-  "a4b8c3f",
-  "1e6d2b9",
-  "7f3c5a1",
-  "2a8e4d6",
-  "9b1f7c3",
-];
-
+/**
+ * Roles in reverse-chronological order. `isHighlighted` marks the current
+ * headline role; `earlier` drops a role into the compact "earlier" group
+ * (older / non-engineering work that shouldn't compete with the SWE roles).
+ */
 export const EXPERIENCES = [
   {
     title: "Google - Software Engineering Intern",
@@ -35,19 +10,21 @@ export const EXPERIENCES = [
     location: "Kirkland, WA",
     isHighlighted: true,
     details: [
-      "Implemented a standalone web terminal for Chrome Remote Desktop.",
+      "Implemented a standalone companion web terminal for Chrome Remote Desktop.",
+      "Reduced bandwidth requirement for agentic CLI tool usage from 0.2-3 Mbps to 0.1-2 Kbps.",
+      "Code fragments are in Chromium & Google3.",
     ],
   },
   {
     title: "EPIC Lab - Full Stack Mobile Developer (GoodBuys)",
-    year: "May 2023 - Present",
+    year: "May 2025 - June 2026",
     location: "Santa Clara, CA",
     details: [
       "Built a React Native mobile app to trace the ethical labels of brands.",
     ],
   },
   {
-    title: "SCU School of Engineering - Grader",
+    title: "SCU School of Engineering - Grader & Teaching Assistant",
     year: "Sept. 2025 - Present",
     location: "Santa Clara, CA",
     details: [
@@ -58,7 +35,7 @@ export const EXPERIENCES = [
   },
   {
     title: "HCI Lab - Full Stack Developer (SMAR)",
-    year: "April 2025 - Present",
+    year: "April 2025 - June 2026",
     location: "Santa Clara, CA",
     details: [
       "Contributed and maintained a React Webapp that allows non-technical researchers to systematically scrape and analyze information of mobile applications on the Google Play Store and the App Store.",
@@ -68,7 +45,7 @@ export const EXPERIENCES = [
   },
   {
     title: "EPIC Lab - Full Stack Developer & Team Lead (PTHub)",
-    year: "May 2023 - Present",
+    year: "May 2023 - June 2026",
     location: "Santa Clara, CA",
     details: [
       "Acted as the lead for the mobile development team, spearheading development for an experimental method for encouraging public transportation.",
@@ -114,6 +91,7 @@ export const EXPERIENCES = [
     title: "University Library Student Assistant",
     year: "Apr. 2022 - Jun. 2025",
     location: "Santa Clara, CA",
+    earlier: true,
     details: [
       "Audited archival materials and moved current materials into the archive.",
       "Reshelved books and maintained proper organization within the library's offerings.",
@@ -124,6 +102,7 @@ export const EXPERIENCES = [
     title: "Musical Streaming Operator",
     year: "2021",
     location: "Jakarta, Indonesia",
+    earlier: true,
     details: [
       "Handled YouTube streaming for an online musical.",
       "Managed timing of technical effects.",
@@ -133,6 +112,7 @@ export const EXPERIENCES = [
     title: "Springfield Cup Head of Logistics",
     year: "2020 - 2021",
     location: "Jakarta, Indonesia",
+    earlier: true,
     details: [
       "Led a team of 6 to handle logistics for a city-wide high school event.",
       "Managed budget, staff meals, and event materials requests.",
@@ -140,3 +120,9 @@ export const EXPERIENCES = [
     ],
   },
 ];
+
+export const MAIN_EXPERIENCES = EXPERIENCES.filter((e) => !e.earlier);
+export const EARLIER_EXPERIENCES = EXPERIENCES.filter((e) => e.earlier);
+
+/** First few roles, for the home-page preview. */
+export const RECENT_EXPERIENCES = MAIN_EXPERIENCES.slice(0, 3);
