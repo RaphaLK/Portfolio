@@ -1,30 +1,20 @@
 export default function sitemap() {
-  const baseUrl = 'https://raphaelkusuma.me';
-  
+  const baseUrl = "https://raphaelkusuma.me";
+  const now = new Date();
+
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
+    { url: baseUrl, lastModified: now, changeFrequency: "monthly", priority: 1 },
     {
       url: `${baseUrl}/Projects`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
+      lastModified: now,
+      changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/Work`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+      lastModified: now,
+      changeFrequency: "monthly",
       priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/Components`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.2,
     },
   ];
 }
