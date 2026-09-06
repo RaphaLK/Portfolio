@@ -31,7 +31,7 @@ export default function Highlights() {
                   M.S. Computer Science &amp; Engineering
                 </p>
                 <p className="mt-0.5 text-xs text-ink-faint">
-                  GPA 3.903 / 4.0 · HCI Lab &amp; EPIC Lab · TA / Grader
+                  GPA 3.923 / 4.0 · HCI Lab &amp; EPIC Lab · TA / Grader
                 </p>
               </div>
               <div className="border-l border-line-strong pl-3">
